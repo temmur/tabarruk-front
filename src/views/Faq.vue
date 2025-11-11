@@ -1,0 +1,4 @@
+<template>
+  Faq vue
+</template>
+
