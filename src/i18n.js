@@ -1,12 +1,15 @@
 // src/i18n.js
 import { createI18n } from 'vue-i18n'
+import en from '@/locales/en.json'
+import uz from '@/locales/uz.json'
+import ru from '@/locales/ru.json'
 if (!['en', 'uz', 'ru'].includes(localStorage.getItem('lang'))) {
     localStorage.removeItem('lang')
 }
 // Detect previously saved language or default to English
 const savedLang = localStorage.getItem('lang') || 'en'
 
-// Define translations
+
 const messages = {
     en: {
         logoTitle: "The blessed pilgrimage",
@@ -46,10 +49,10 @@ const messages = {
     }
 }
 
-// ✅ Main I18n configuration
+
 export const i18n = createI18n({
-    legacy: false, // Important for <script setup> in Vue 3
+    legacy: false,
     locale: savedLang,
     fallbackLocale: 'en',
-    messages
+    messages: {en, ru, uz}
 })
