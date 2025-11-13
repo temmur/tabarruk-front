@@ -1,3 +1,9 @@
 {
-    "about": "Про нас"
+    "about": "Про нас",
+  "countries": "страны",
+  "heritageMap": "Общая карта",
+  "religions": "Религии",
+  "help": "Помощь",
+  "faq": "Вопрос-ответ",
+  "searchPlaceholder": "Поиск..."
 }
