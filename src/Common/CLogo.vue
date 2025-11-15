@@ -1,10 +1,10 @@
 <template>
   <RouterLink to="/" class="flex items-center gap-2 ml-5">
-    <img src="https://cdn4.telesco.pe/file/bervci2W1JhvS2CTafMc8J03cirwqQE_K-1Fm5wjM4iFMvTVxCzywCXyIwI3AjJeu8UXXySxwAV7rMG0grnwgmyGWK4_FSBRqnyXqBRMPdBH7EIJIveWPDADeKj6NUTqgZXKHc0BU2az7ysoWJwUazCK_5T8SPp5DFnprIhjcKx4Q4J102sGIADxr88Ng6T1LoGdAKKp2XxDwbuRfwm-HutyM71it7uN2-83xDhEUtnJtbY7bZNUiBeeHl-CMIPRE74TVOdGlQXWkxuVAn8FNMEgbGyoIcmraHv6-3z--xW6PjpLecd80PavmI2lEJwMJjeCwGAxata9D-0LcyBQ6Q.jpg"  alt="Profile" class="w-12 h-12 rounded-full object-cover"/>
+    <img src="https://cdn4.telesco.pe/file/f7F1fiBmuECNtVV7VgpqtacoP2Bb-H9CmEt6bBU45UKZ4ShO7KgIHecwEw4FsRMW9LNH5qdqw8y01ioYKvlBN7AjMo8mE2yk5g_-U0lZ0KPi4F4WT8gcHSOIxyUIzWpUMnIkg_CNnuYF1UZfP4SULSnxS2Yiy21cCKGnJ_7MVjdE_1J2g1XPK3f5MDMHG_eJwGj30PTMdDZgRA_fGdmaYX5w-5Cn2E1BdcOfDuyfpy2nyuilEEGg9sIzPsyP52iD6G5VSsaSZmpT_LDOf8f3QWX9hnHxeFfKaQOimg-tnYkCRUQKdA249w7X-DYHOumGlJHZ9dMu697Q7FL53et3pw.jpg"  alt="Profile" class="w-12 h-12 rounded-full object-cover"/>
     <div  class="flex flex-col">
-      <span class="mr-1 text-gray-800 font-semibold">The blessed pilgrimage</span>
-      <span class="text-gray-500 text-[10px]">The tourism committee under Ministry of ecology,</span>
-      <span class="text-gray-500 text-[10px]"> environmental protection and climate change of the Republic of Uzbekistan</span>
+      <span class="mr-1 text-white font-semibold">The blessed pilgrimage</span>
+      <span class="text-white text-[6px]">The tourism committee under Ministry of ecology, environmental</span>
+      <span class="text-white text-[6px]"> protection and climate change of the Republic of Uzbekistan</span>
     </div>
   </RouterLink>
 </template>

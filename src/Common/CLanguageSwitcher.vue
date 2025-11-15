@@ -5,8 +5,8 @@
         @click="dropdownOpen = !dropdownOpen"
         class="flex items-center gap-1 focus:outline-none"
     >
-      <img :src="currentFlag" alt="flag" class="w-5 h-5 rounded-full" />
-      <span class="text-sm font-medium">{{ currentLabel }}</span>
+      <img :src="currentFlag" alt="flag" class="w-9 h-9 rounded-full" />
+
     </button>
 
     <!-- Dropdown list -->
@@ -20,7 +20,7 @@
             class="flex items-center gap-2 px-3 py-2 hover:bg-gray-100 w-full text-left"
         >
           <img :src="lang.flag" class="w-4 h-4 rounded-full" />
-          <span class="text-sm">{{ lang.label }}</span>
+          <span class="text-sm">{{ lang.name }}</span>
         </button>
       </li>
     </ul>
@@ -46,7 +46,7 @@ watch(
       const lang = languages.find((l) => l.code === newLocale)
       if (lang) {
         currentFlag.value = lang.flag
-        currentLabel.value = lang.label
+        currentLabel.value = lang.name
       }
     },
     { immediate: true }
