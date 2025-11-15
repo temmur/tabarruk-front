@@ -1,22 +1,24 @@
 <template>
   <div class="relative">
-    <!-- 🔍 Collapsed search icon -->
+    <!-- search icon -->
     <button
         v-if="!focused"
         @click="focused = true"
-        class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 transition"
+        class="flex items-center justify-center w-10 h-10bg-gradient-to-b from-[#0a1128] to-[#0a1128/90] transition"
     >
       <img
           src="https://i.pinimg.com/originals/fe/e8/7d/fee87d01d52072f0589c4de685215fdb.png"
-          class="w-15 h-10 cursor-pointer"
+          class="w-14 h-20"
           alt="Search"
       />
     </button>
 
-    <!-- 📝 Expanded overlay search bar -->
+<!--Opened Overlay -->
     <div
         v-else
-        class="absolute top-0 right-0 w-[210px] h-full bg-white flex items-center px-4 z-50 shadow-lg transition-all duration-200"
+        class="fixed top-0 left-0 w-full h-19
+         bg-gradient-to-b from-[#0a1128] to-[#0a1128/90]
+         flex items-center px-4 z-[2000] transition-all duration-200"
     >
       <input
           v-model="query"
@@ -24,24 +26,26 @@
           :placeholder="$t('searchPlaceholder')"
           @focus="focused = true"
           @blur="onBlur"
-          class="w-full border border-gray-300 rounded-full py-2 px-4 focus:outline-none focus:ring-0 text-gray-700"
+          class="w-full px-4 py-2
+           bg-white/10 text-white border border-white/20
+           rounded-none focus:outline-none focus:ring-0"
       />
 
-      <!-- ✖ Close button -->
       <button
           @click="clearQuery"
-          class="ml-2 text-gray-400 hover:text-gray-600 text-xl"
+          class="ml-3 text-white/70 hover:text-white text-xl"
       >
         ✖
       </button>
     </div>
 
-    <!-- 🔽 Dropdown results -->
+    <!-- Dropdown -->
     <div
-        v-if="focused && query && filteredSites.length > 0"
-        class="absolute left-0 top-full mt-2 w-[80vw] bg-white border border-gray-200 rounded-xl shadow-lg z-[1000] overflow-y-auto max-h-72"
+        v-if="focused && query"
+        class="absolute left-0 top-full mt-2 w-[80vw] bg-white border border-gray-200 rounded-xl shadow-lg z-[1000] max-h-72 overflow-y-auto"
     >
-      <ul>
+      <!-- Showing results -->
+      <ul v-if="filteredSites.length > 0">
         <li
             v-for="site in filteredSites"
             :key="siteKey(site)"
@@ -51,10 +55,18 @@
           <div class="text-xs text-gray-500" v-html="highlight(siteDesc(site))"></div>
         </li>
       </ul>
+
+      <!-- No result message -->
+      <div v-else class="p-6 text-center">
+        <h2 class="text-lg font-semibold text-gray-400">No Results Found</h2>
+        <p class="text-sm text-gray-500 mt-1">
+          Oops, we could not find any matching result for your search
+        </p>
+      </div>
     </div>
+
   </div>
 </template>
-
 
 <script setup>
 import { ref, computed } from 'vue'
@@ -65,12 +77,12 @@ const { locale } = useI18n()
 const query = ref('')
 const focused = ref(false)
 
-// 🌍 Localization helpers
+// Localization helpers
 const siteName = site => site[`name_${locale.value}`] || site.name_en
 const siteDesc = site => site[`desc_${locale.value}`] || site.desc_en
 const siteKey = site => `${siteName(site)}-${siteDesc(site)}`
 
-// 🔍 Filter sites
+// Filter sites
 const filteredSites = computed(() => {
   if (!query.value) return []
   const q = query.value.toLowerCase()
@@ -81,20 +93,20 @@ const filteredSites = computed(() => {
   })
 })
 
-// ✨ Highlight matches
+//Highlight
 function highlight(text) {
   if (!query.value) return text
   const regex = new RegExp(`(${query.value})`, 'gi')
   return text.replace(regex, '<span class="bg-yellow-300 text-black">$1</span>')
 }
 
-// 🧹 Clear & close search
+//close search
 function clearQuery() {
   query.value = ''
   focused.value = false
 }
 
-// ⏳ Blur delay to allow clicking dropdown items
+// Blur delay for clicking dropdown items
 function onBlur() {
   setTimeout(() => {
     if (!query.value) focused.value = false

@@ -1,8 +1,10 @@
 <template>
   <header
       ref="header"
-      class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-white shadow-sm"
-      :class="{ 'bg-[#001f3f]/60 backdrop-blur-md shadow-md': isScrolled }"
+      class="[
+      'fixed top-0 left-0 w-full z-50 transition-all p-11 duration-300 bg-gradient-to-b from-[#0a1128] to-[#0a1128/90]' hasBorder ? 'border-b border-gray-600 shadow-md' :'border-transparent'
+       ]"
+      :class="{ 'bg-indigo-200 backdrop-blur-md  shadow-md': isScrolled }"
   >
     <div class="container mx-auto flex items-center justify-between p-4">
 
@@ -10,15 +12,15 @@
       <CLogo />
 
       <!-- Right side -->
-      <div class="hidden md:flex items-center gap-2 text-gray-800 relative">
+      <div class="hidden md:flex items-center gap-5 text-gray-800 relative">
 
         <!-- Navbar links -->
         <CNavbar />
 
         <!-- Divider -->
-        <span class="border-l border-gray-300 h-6"></span>
+        <span class="border-l border-gray-300 h-8"></span>
 <CLanguageSwitcher/>
-        <span class="border-l border-gray-300 h-6"></span>
+        <span class="border-l border-gray-300 h-8"></span>
 
         <!-- Search input -->
         <CSearchInput class="w-48"/>
@@ -30,12 +32,11 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 import CLogo from "@/Common/CLogo.vue";
 import CNavbar from "@/Common/CNavbar.vue";
 import CSearchInput from "@/Common/CSearchInput.vue";
-import CDropdown from "@/Common/CDropdown.vue";  // ✅ import dropdown
 import CLanguageSwitcher from "@/Common/CLanguageSwitcher.vue";
 // Language data
 import { langOptions } from '@/langs.js';
@@ -58,4 +59,25 @@ function setLanguage(code) {
   locale.value = code;
   currentFlag.value = languages.find(l => l.code === code).flag;
 }
+
+const scrollY =ref(0)
+const hasBorder = ref(false)
+
+onMounted('scroll',()=>{
+  scrollY.value = window.scrollY
+})
+
+onUnmounted(()=>{
+  window.removeEventListener('scroll', ()=>{
+    scrollY.value = window.scrollY
+  })
+
+  watch(scrollY,(newY) =>{
+    console.log('Scroll position:', newY)
+    hasBorder.value = newY > 50
+  })
+
+
+})
+
 </script>
