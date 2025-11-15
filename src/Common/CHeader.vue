@@ -22,6 +22,7 @@
 
         <!-- Search input -->
         <CSearchInput class="w-48"/>
+        
       </div>
 
     </div>
@@ -38,6 +39,8 @@ import CDropdown from "@/Common/CDropdown.vue";  // ✅ import dropdown
 import CLanguageSwitcher from "@/Common/CLanguageSwitcher.vue";
 // Language data
 import { langOptions } from '@/langs.js';
+
+const toggle = ref(false)
 
 const isScrolled = ref(false);
 const handleScroll = () => (isScrolled.value = window.scrollY > 50);
