@@ -1,13 +1,13 @@
 <template>
   <header
       ref="header"
-      class="[
-      'fixed top-0 left-0 w-full z-50 transition-all p-11 duration-300 bg-gradient-to-b from-[#0a1128] to-[#0a1128/90]' hasBorder ? 'border-b border-gray-600 shadow-md' :'border-transparent'
-       ]"
-      :class="{ 'bg-indigo-200 backdrop-blur-md  shadow-md': isScrolled }"
+      class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border"
+      :class="[
+  isScrolled ? 'bg-indigo-200 backdrop-blur-md shadow-md' : '',
+  hasBorder ? 'border-b border-gray-600 shadow-md' : 'border-transparent'
+]"
   >
     <div class="container mx-auto flex items-center justify-between p-4">
-
       <!-- Logo -->
       <CLogo />
 
@@ -23,8 +23,8 @@
         <span class="border-l border-gray-300 h-8"></span>
 
         <!-- Search input -->
-        <CSearchInput class="w-48"/>
-        
+        <CSearchInput class=""/>
+
       </div>
 
     </div>
