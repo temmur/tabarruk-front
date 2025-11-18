@@ -8,7 +8,7 @@
     >
       <img
           src="https://i.pinimg.com/originals/fe/e8/7d/fee87d01d52072f0589c4de685215fdb.png"
-          class="w-14 h-20"
+          class="w-12 h-12"
           alt="Search"
       />
     </button>
@@ -39,7 +39,6 @@
       </button>
     </div>
 
-    <!-- Dropdown -->
     <div
         v-if="focused && query"
         class="absolute left-0 top-full mt-2 w-[80vw] bg-white border border-gray-200 rounded-xl shadow-lg z-[1000] max-h-72 overflow-y-auto"
