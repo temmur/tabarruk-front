@@ -1,26 +1,26 @@
 <template>
   <div class="relative">
-    <!-- Current language flag -->
+    <!--language flag -->
     <button
         @click="dropdownOpen = !dropdownOpen"
         class="flex items-center gap-1 focus:outline-none"
     >
-      <img :src="currentFlag" alt="flag" class="w-9 h-9 rounded-full" />
+      <img :src="currentFlag" alt="flag" class="w-9 h-9 rounded-full cursor-pointer" />
 
     </button>
 
     <!-- Dropdown list -->
     <ul
         v-if="dropdownOpen"
-        class="absolute right-0 mt-2 bg-white border rounded-md shadow-md w-32 z-50"
+        class="absolute right-0 mt-2 bg-[#132153] border rounded-md shadow-md w-32 z-50"
     >
       <li v-for="lang in languages" :key="lang.code">
         <button
             @click="setLanguage(lang.code)"
-            class="flex items-center gap-2 px-3 py-2 hover:bg-gray-100 w-full text-left"
+            class="flex items-center gap-2 px-3 py-2 hover:bg-[#101B45] rounded transition-colors cursor-pointer w-full text-left"
         >
           <img :src="lang.flag" class="w-4 h-4 rounded-full" />
-          <span class="text-sm">{{ lang.name }}</span>
+          <span class="text-sm text-white">{{ lang.name }}</span>
         </button>
       </li>
     </ul>
@@ -39,7 +39,7 @@ const languages = langOptions
 const currentFlag = ref('')
 const currentLabel = ref('')
 
-// Update flag + label whenever locale changes
+// Update flag
 watch(
     () => locale.value,
     (newLocale) => {
