@@ -2,23 +2,19 @@
   <div class="relative">
     <!-- search icon -->
     <button
-        v-if="!focused"
-        @click="focused = true"
-        class="flex items-center justify-center w-10 h-10bg-gradient-to-b from-[#0a1128] to-[#0a1128/90] transition"
+
+        @click="toggleFunc"
+        class="flex items-center justify-center h-10 transition cursor-pointer"
     >
-      <img
-          src="https://i.pinimg.com/originals/fe/e8/7d/fee87d01d52072f0589c4de685215fdb.png"
-          class="w-14 h-20"
-          alt="Search"
-      />
+      <i class="fa-solid fa-magnifying-glass text-white text-lg hover:text-gray-400"
+      :class="focused ? 'fa-close' : 'fa-solid'"
+      ></i>
     </button>
 
 <!--Opened Overlay -->
-    <div
-        v-else
-        class="fixed top-0 left-0 w-full h-19
-         bg-gradient-to-b from-[#0a1128] to-[#0a1128/90]
-         flex items-center px-4 z-[2000] transition-all duration-200"
+    <div v-if="focused"
+        class="absolute top-0 right-0 w-[650px]
+           z-[2000] transition-all duration-200 mr-9"
     >
       <input
           v-model="query"
@@ -27,43 +23,38 @@
           @focus="focused = true"
           @blur="onBlur"
           class="w-full px-4 py-2
-           bg-white/10 text-white border border-white/20
-           rounded-none focus:outline-none focus:ring-0"
+           bg-white/10 text-white border border-white
+           rounded-lg focus:outline-none focus:ring-0 "
       />
-
-      <button
-          @click="clearQuery"
-          class="ml-3 text-white/70 hover:text-white text-xl"
+      <div
+          v-if="focused && query"
+          class="absolute right-0 top-full mt-2 w-full bg-white border border-gray-200 rounded-xl shadow-lg z-[1000] max-h-72 overflow-y-auto"
       >
-        ✖
-      </button>
+        <!-- Showing results -->
+        <ul v-if="filteredSites.length > 0"
+        class="overflow-scroll"
+        >
+          <li
+              v-for="site in filteredSites"
+              :key="siteKey(site)"
+              class="px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors"
+          >
+            <div class="font-medium" v-html="highlight(siteName(site))"></div>
+            <div class="text-xs text-gray-500" v-html="highlight(siteDesc(site))"></div>
+          </li>
+        </ul>
+
+        <!-- No result message -->
+        <div v-else class="p-6 text-center">
+          <h2 class="text-lg font-semibold text-gray-400">No Results Found</h2>
+          <p class="text-sm text-gray-500 mt-1">
+            Oops, we could not find any matching result for your search
+          </p>
+        </div>
+      </div>
     </div>
 
     <!-- Dropdown -->
-    <div
-        v-if="focused && query"
-        class="absolute left-0 top-full mt-2 w-[80vw] bg-white border border-gray-200 rounded-xl shadow-lg z-[1000] max-h-72 overflow-y-auto"
-    >
-      <!-- Showing results -->
-      <ul v-if="filteredSites.length > 0">
-        <li
-            v-for="site in filteredSites"
-            :key="siteKey(site)"
-            class="px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors"
-        >
-          <div class="font-medium" v-html="highlight(siteName(site))"></div>
-          <div class="text-xs text-gray-500" v-html="highlight(siteDesc(site))"></div>
-        </li>
-      </ul>
-
-      <!-- No result message -->
-      <div v-else class="p-6 text-center">
-        <h2 class="text-lg font-semibold text-gray-400">No Results Found</h2>
-        <p class="text-sm text-gray-500 mt-1">
-          Oops, we could not find any matching result for your search
-        </p>
-      </div>
-    </div>
 
   </div>
 </template>
@@ -100,6 +91,12 @@ function highlight(text) {
   return text.replace(regex, '<span class="bg-yellow-300 text-black">$1</span>')
 }
 
+const toggleFunc=()=>{
+  focused.value = !focused.value
+  if(focused.value){
+    query.value = ''
+  }
+}
 //close search
 function clearQuery() {
   query.value = ''

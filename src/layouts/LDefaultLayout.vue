@@ -1,8 +1,7 @@
 <template>
   <div class="min-h-screen flex flex-col">
     <CHeader/>
-    <main class="flex-1 p-6 bg-gray-100">
-
+    <main class="flex-1 grow-1">
       <router-view />
     </main>
     <CFooter />

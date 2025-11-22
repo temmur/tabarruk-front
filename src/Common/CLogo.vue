@@ -1,6 +1,6 @@
 <template>
   <RouterLink to="/" class="flex items-center gap-2 ml-5">
-    <img src="https://cdn4.telesco.pe/file/f7F1fiBmuECNtVV7VgpqtacoP2Bb-H9CmEt6bBU45UKZ4ShO7KgIHecwEw4FsRMW9LNH5qdqw8y01ioYKvlBN7AjMo8mE2yk5g_-U0lZ0KPi4F4WT8gcHSOIxyUIzWpUMnIkg_CNnuYF1UZfP4SULSnxS2Yiy21cCKGnJ_7MVjdE_1J2g1XPK3f5MDMHG_eJwGj30PTMdDZgRA_fGdmaYX5w-5Cn2E1BdcOfDuyfpy2nyuilEEGg9sIzPsyP52iD6G5VSsaSZmpT_LDOf8f3QWX9hnHxeFfKaQOimg-tnYkCRUQKdA249w7X-DYHOumGlJHZ9dMu697Q7FL53et3pw.jpg"  alt="Profile" class="w-12 h-12 rounded-full object-cover"/>
+    <img src="https://cdn4.telesco.pe/file/GKzqVAJTfLILl7h5Pp1zeFeKT4An92xL6YA2amNQeATSQHd9LtE-7_Ys85pP2y1XBCXJTcCObqlwTLOPwagTYmthGKjV-_JUTKuNTq_2zBYkgbIqmun05WmICGQvfUcTEX_QKqNXLx-xLav2t2GGNV8dU7M4F3OGUgCf42qVfAIDiso5cSx4h05fsEkGFjn864zw4CswJ7ZBUk5bcXhKMBq86NK17WYWKhgiJjpWvHVv57_u2jfTqnIgRP3UQDfGkWkkienD3H7_yCX-A9OJelO6PvuZsyNxwkQfgtHLO4BAMUvGhmus5n3KlNqVEOELFYKU_G8HfkLQW7R__GkdLw.jpg"  alt="Profile" class="w-12 h-12 rounded-full object-cover"/>
     <div  class="flex flex-col">
       <span class="mr-1 text-white font-semibold">The blessed pilgrimage</span>
       <span class="text-white text-[6px]">The tourism committee under Ministry of ecology, environmental</span>
