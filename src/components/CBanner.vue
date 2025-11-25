@@ -3,15 +3,13 @@
     <div
         class="hero-bg relative"
         :style="{ backgroundImage: 'url(' + slides[currentIndex].image + ')' }"
-
     >
 
     </div>
-
     <div class="imgs absolute inset-0 bg-black/40"></div>
 
     <div class="hero-overlay">
-      <img src="/public/Vector (6).svg">
+        <img src="/public/Vector (6).svg">
     </div>
 
     <div class="hero-inner">
@@ -47,62 +45,63 @@
     </div>
   </section>
 </template>
- <script setup lang="ts">
- import { ref, onMounted,onBeforeUnmount, computed } from 'vue';
- import CButtons from "@/components/CButtons.vue";
- const slides = ref([
-   {
-     image: '/images/slide1.jpg',
-     location: "Samarqand viloyati, O'zbekiston",
-     title: 'Registon',
-     description:
-         "Mirzo Ulug‘bek zamonasidan buyon bu maydon Samarqand ahli uchun bosh maydon hisoblanadi. Samarqand hukmdorlarining farmonlari shu yerdan e'lon qilingan."
-   },
-   {
-     image: '/images/slide2.jpg',
-     location: "Buxoro viloyati, O'zbekiston",
-     title: 'Ark qal’asi',
-     description:
-         "Buxoro Ark qal’asi qadimdan shahar markazi bo‘lib, unda amir saroyi va davlat idoralari joylashgan."
-   },
-   {
-     image: '/images/slide3.jpg',
-     location: "Xiva shahri, O'zbekiston",
-     title: 'Ichan qal’a',
-     description:
-         "Ichan qal’a — Xivaning tarixiy markazi bo‘lib, ko‘plab madrasalar, minoralar va me’moriy yodgorliklarni o‘zida jamlagan."
-   }
- ])
- const currentIndex = ref(0)        // 0,1,2 …
- let intervalId = null
+<script setup>
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 
- const formattedCurrent = computed(() => {
-   const num = currentIndex.value + 1        // slayderlar 1 dan boshlanadi
-   return num < 10 ? '0' + num : String(num)
- })
+const slides = ref([
+  {
+    image: '/images/1.jpg',
+    location: "Samarqand viloyati, O'zbekiston",
+    title: 'Registon',
+    description:
+        "Mirzo Ulug‘bek zamonasidan buyon bu maydon Samarqand ahli uchun Bosh maydon hisoblanadi. Samarqand hukmdorlarining farmonlari shu yerdan e’lon qilinadi. Yovga qarshi erk jangiga otlangan jasur lashkarlar, aynan, shu maydonda qasamyod qilishib keksalardan duo-fotiha olganlar"
+  },
+  {
+    image: '/images/2.jpg',
+    location: "Turkiston Shahri viloyati",
+    title: "O'trar Shahri",
+    description:
+        "Oʻtror — Oʻrta Osiyodagi eng qadimiy shaharlardan biri. Arab manbalarida shahar Forob deb ataladi. Shahar o'rnida birinchi aholi punktlari 8-asrda paydo bo'lgan"
+  },
+  {
+    image: '/images/3.jpg',
+    location: "Sulton Uvays Qaroniy masjidi",
+    title: 'Ichan qal’a',
+    description:
+        "Uvaysga Payg‘ambarimiz (s.a.v)ning Uhud jangida tishlarini dushmanlar sindirgani ayon bo‘lgach, juda afsuslanib, Rasuli akram haqlariga duo qilib, Allohdan u zotning&nbsp; umrlarini ziyoda qilishini tilaydi"
+  }
+])
 
- const startSlider = () => {
-   intervalId = setInterval(() => {
-     // keyingi slaydga o‘tish (0→1→2→0 ...)
-     currentIndex.value = (currentIndex.value + 1) % slides.value.length
-   }, 3000) // 3 sekund
- }
+const currentIndex = ref(0)        // 0,1,2 …
+let intervalId = null
 
- const stopSlider = () => {
-   if (intervalId) {
-     clearInterval(intervalId)
-     intervalId = null
-   }
- }
- onMounted(startSlider)
- onBeforeUnmount(stopSlider)
- </script>
+// 01, 02, 03 ko‘rinishi uchun
+const formattedCurrent = computed(() => {
+  const num = currentIndex.value + 1        // slayderlar 1 dan boshlanadi
+  return num < 10 ? '0' + num : String(num)
+})
+
+const startSlider = () => {
+  intervalId = setInterval(() => {
+    // keyingi slaydga o‘tish (0→1→2→0 ...)
+    currentIndex.value = (currentIndex.value + 1) % slides.value.length
+  }, 3000) // 3 sekund
+}
+
+const stopSlider = () => {
+  if (intervalId) {
+    clearInterval(intervalId)
+    intervalId = null
+  }
+}
+
+onMounted(startSlider)
+onBeforeUnmount(stopSlider)
+</script>
 <style scoped>
 
 .hero {
   position: relative;
-  background-position: center;
-  background-size: cover;
   width: 100%;
   height: 100vh;
   overflow: hidden;
@@ -112,7 +111,7 @@
 
 .hero-bg {
   position: absolute;
-  opacity: 1;
+  inset: 0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
