@@ -32,6 +32,7 @@
     </CButtons>
 
   </div>
+  <router-link to="country/2">Hello</router-link>
 </template>
 
 

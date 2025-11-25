@@ -10,6 +10,7 @@ import Map from '@/views/Map.vue'
 import Religions from '@/views/Religions.vue'
 import Help from '@/views/Help.vue'
 import Faq from '@/views/Faq.vue'
+import PCountriesSingle from '@/views/Countries/PIndex.vue'
 
 const routes = [
     {
@@ -17,7 +18,13 @@ const routes = [
         component: LDefaultLayout,
         children: [
             { path: '', name: 'Home', component: Home },
-            { path: 'about', name: 'About', component: About },
+            {path: 'country/:id', name: 'countriesSingle',
+                component:PCountriesSingle,
+                props: true
+            },
+            {path: '/playground',
+                name: 'Playground',
+                component: ()=> import('@/views/PPlayground.vue')},
             { path: 'countries', name: 'Countries', component: Countries },
             { path: 'map', name: 'Map', component: Map },
             { path: 'religions', name: 'Religions', component: Religions },

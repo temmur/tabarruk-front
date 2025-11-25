@@ -1,7 +1,7 @@
 <template>
   <header
       ref="header"
-      class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border"
+      class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border py-4"
       :class="[
   isScrolled ? 'bg-indigo-200 backdrop-blur-md shadow-md' : '',
   hasBorder ? 'border-b border-gray-600 shadow-md' : 'border-transparent'
