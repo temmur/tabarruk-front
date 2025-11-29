@@ -1,4 +1,4 @@
 <template>
-  Faq vue
+ <p class="text-white"> Faq vue</p>
 </template>
 

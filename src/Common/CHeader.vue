@@ -28,6 +28,9 @@
       </div>
 
     </div>
+
+    <NavbarSkeleton v-if="loading"/>
+
   </header>
 </template>
 
@@ -38,6 +41,7 @@ import CLogo from "@/Common/CLogo.vue";
 import CNavbar from "@/Common/CNavbar.vue";
 import CSearchInput from "@/Common/CSearchInput.vue";
 import CLanguageSwitcher from "@/Common/CLanguageSwitcher.vue";
+import NavbarSkeleton from "@/Skeleton/NavbarSkeleton.vue";
 // Language data
 import { langOptions } from '@/langs.js';
 
@@ -80,4 +84,11 @@ onUnmounted(()=>{
 
 })
 
+const loading = ref(false)
+
+onMounted(() =>{
+  setTimeout(() =>{
+    loading.value = false
+  }, 1500)
+})
 </script>
