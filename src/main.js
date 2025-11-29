@@ -1,10 +1,13 @@
 // src/main.js
+import './assets/main.css'
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
+import './assets/icomoon/style.css'
+
 import { createPinia } from 'pinia'
 import  i18n  from './i18n'
-import './assets/main.css'
+
 
 const app = createApp(App)
 app.use(router)

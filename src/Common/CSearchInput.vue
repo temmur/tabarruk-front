@@ -4,7 +4,7 @@
     <button
 
         @click="toggleFunc"
-        class="flex cursor-pointer items-center justify-center h-10 transition cursor-pointer"
+        class="flex items-center justify-center h-10 transition cursor-pointer"
     >
       <i class="fa-solid fa-magnifying-glass text-white text-lg hover:text-gray-400"
       :class="focused ? 'fa-close' : 'fa-solid'"
