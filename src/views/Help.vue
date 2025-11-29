@@ -1,3 +1,3 @@
 <template>
-  help vue
+<p class="text-white">  help vue</p>
 </template>
