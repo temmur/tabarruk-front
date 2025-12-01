@@ -32,6 +32,9 @@
     </CButtons>
 
   </div>
+  <div>
+    <CAbout/>
+  </div>
 </template>
 
 
@@ -41,6 +44,7 @@ import { ref } from 'vue';
 import ExploreButton from "@/Buttons/ExploreButton.vue";
 import AboutButton from "@/Buttons/AboutButton.vue";
 import CButtons from "@/components/CButtons.vue";
+import CAbout from "@/components/Sections/CAbout.vue";
 
 const cards = ref([
   { id: 1, image: 'https://tabarrukziyorat.uz/media/destination_images/Axtam_Sahoba_Adhamsahoba.jpg', title: 'Ahtansob', subtitle: 'Toshkent region, Uzbekistan', visible: false },
@@ -77,6 +81,3 @@ const paused = ref(false);
   animation-play-state: paused;
 }
 </style>
-
-
-
