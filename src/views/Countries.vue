@@ -1,3 +1,3 @@
 <template>
-  countries vue
+ <p class="text-white"> countries vue</p>
 </template>

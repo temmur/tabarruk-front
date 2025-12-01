@@ -1,3 +1,3 @@
 <template>
-  religions vue
+ <p class="text-white"> religions vue</p>
 </template>
