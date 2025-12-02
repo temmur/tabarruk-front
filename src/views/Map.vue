@@ -1,3 +1,3 @@
 <template>
-  map vue
+ <p class="text-white"> map vue</p>
 </template>
