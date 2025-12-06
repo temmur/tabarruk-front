@@ -25,12 +25,14 @@
     <div class="flex text-white items-center mt-4">
     </div>
     <div class="mt-10">
+          <CAbout/>
       <TravelStats/>
     <CountriesCard :countries = "countries"/>
       <NewsCards :cards="cards"/>
+      <InstagramCard/>
+      <Particles :items="institutions" :repeat-count="4" />
     </div>
   </div>
-
 </template>
 
 <script setup lang="ts">
@@ -41,6 +43,35 @@ import TravelStats from "@/cards/TravelStats.vue";
 import CountriesCard from '../components/sections/CountriesCard.vue'
 import NewsCards from "@/cards/newsCards.vue";
 import DestinationCards from "@/cards/destinationCards.vue";
+
+import CAbout from '@/components/Sections/CAbout.vue';
+import InstagramCard from "@/components/InstagramCard.vue";
+import Particles from "@/components/PartnerCarusel.vue";
+
+
+const institutions = [
+  {
+    id: 1,
+    title: "O'zbekiston Respublikasi Prezident Administratsiyasi",
+    logo: '/img/admin.svg',
+  },
+  {
+    id: 2,
+    title: 'Turizm qo‘mitasi',
+    logo: '/img/tourism.svg',
+  },
+  {
+    id: 3,
+    title: 'Ekologiya vazirligi',
+    logo: '/img/eco.svg',
+  },
+  {
+    id: 4,
+    title: 'Favqulodda vaziyatlar vazirligi',
+    logo: '/images/Vector (6).svg',
+  },
+]
+
 const cards = ref(
     [
       {image:'https://tabarrukziyorat.uz/media/news/2881_turkic-ski-cup-to-take-place-on-18-february-2025-at-amirsoy-ski-resort-uzbekistan_f.jpg', title:'Turkic Ski Cup to take place on 18 February 2025 at Amirsoy Ski...', date:'2025-02-11'},
@@ -57,6 +88,10 @@ const countries =[
   { name: "Kyrgyzstan", image: "https://tabarrukziyorat.uz/media/country_flags/Kyrgyzstan.svg" ,desc:"19 destinations" },
   { name: "Hungary", image: "https://tabarrukziyorat.uz/media/country_flags/Hungary.svg" ,desc:"14 destinations" },
 ]
+
+
+
+
 
 const carouselCards = ref([
   { id: 1, image: 'https://tabarrukziyorat.uz/media/destination_images/Axtam_Sahoba_Adhamsahoba.jpg', title: 'Ahtansob', subtitle: 'Toshkent region, Uzbekistan', visible: false },
@@ -227,4 +262,5 @@ const paused = ref(false);
     font-size: 42px;
   }
 }
+
 </style>

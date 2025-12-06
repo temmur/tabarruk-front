@@ -5,5 +5,9 @@
   "religions": "Religions",
   "help": "Help",
   "faq": "FAQ",
-  "searchPlaceholder": "Search..."
+  "searchPlaceholder": "Search...",
+  "about-us-section": {
+    "about": "",
+    "about-subtitle": ""
+  }
 }
