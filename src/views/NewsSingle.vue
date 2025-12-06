@@ -1,63 +1,49 @@
 <template>
-  <section class="w-full px-6 py-12 bg-gray-400 hover:bg-gray-600 container">
+  <div class="bg-[#070b1a] text-white min-h-screen font-sans pt-6">
 
-    <!-- header -->
-    <div class="text-center mb-9">
-      <h3 class="font-serif text-white mb-3 text-3xl font-bold underline underline-offset-[8px] decoration-red-500">
-        News
-      </h3>
-      <p class="font-medium mr-5 text-white">Latest news about Turkic countries</p>
-    </div>
+    <main class="max-w-3xl mx-auto px-4 text-left">
 
-    <div class="flex flex-cols-1 md:flex-cols-3 justify-between gap-6 max-w-5xl mx-auto">
+      <h1 class="text-3xl font-semibold leading-snug  text-ms">2025-yil 18-fevral kuni O‘zbekistondagi <br> Amirsoy tog‘-chang‘i kurortida chang‘i <br> bo‘yicha Turkiy davlatlar kubogi bo‘lib <br> o‘tadi  </h1>
 
-      <!-- BIG CARD -->
-      <div class="md:col-span-1">
-        <div
-          class="bg-gray-800 rounded-xl border border-gray-500/40 backdrop-blur-sm p-4 flex gap-4 justify-center items-center text-white w-[620px] h-[320px]
-          transition-transform duration-300 hover:scale-105 cursor-pointer"
-          @click="$router.push('/news/single')"
-        >
-          <img :src="props.cards[0].image" class="w-60 h-70 object-cover rounded-xl" />
-
-          <div class="flex flex-col justify-between h-full py-1">
-            <p class="font-bold text-xl leading-tight mb-8">{{ props.cards[0].title }}</p>
-            <p class="text-[14px] text-gray-400">{{ props.cards[0].date }}</p>
-          </div>
-        </div>
+      <div class="flex items-center gap-4 text-gray-400 text-sm mb-6">
+        <span class="flex items-center gap-2">
+          <i class="fa-regular fa-calendar"></i> 11.02.2025
+        </span>
+        <span class="flex items-center gap-2">
+          <i class="fa-regular fa-eye"></i> 40
+        </span>
       </div>
 
-      <!-- SMALL CARDS -->
-      <div class="md:col-span-2 flex flex-col gap-3">
-        <div
-          v-for="(card, idx) in props.cards.slice(1)"
-          :key="idx"
-          class="bg-gray-800 rounded-xl p-4 border border-gray-500/40 backdrop-blur-sm flex items-center gap-2 text-white w-[440px] h-[155px]
-          transition-transform duration-300 hover:scale-105 hover:shadow-lg cursor-pointer"
-        >
-          <img :src="card.image" class="w-30 h-30 object-cover rounded-xl" />
-
-          <div class="flex flex-col">
-            <p class="text-lg font-medium mt-2 leading-tight">{{ card.title }}</p>
-            <p class="text-[14px] text-gray-300 mt-3 leading-tight">{{ card.desc }}</p>
-            <p class="text-[13px] text-gray-400">{{ card.date }}</p>
-          </div>
-        </div>
+      <div class="flex justify-center">
+        <img
+          src="https://tabarrukziyorat.uz/media/news/2881_turkic-ski-cup-to-take-place-on-18-february-2025-at-amirsoy-ski-resort-uzbekistan_f.jpg"
+          class="rounded-xl w-full max-w-3xl object-cover"
+        />
       </div>
-    </div>
 
-  </section>
-</template>
+      <p class="text-gray-300 text-sm leading-relaxed mt-4 text-xs">Turkiy davlatlar tashkiloti (TDT) 2025-yil 18-fevral kuni O‘zbekistondagi Amirsoy tog‘-chang‘i kurortida bo‘lib o‘tadigan chang‘i sporti bo‘yicha Turkiy davlatlar kubogini mamnuniyat bilan e’lon qiladi.</p>
 
-<script setup lang="ts">
-import { defineProps } from 'vue'
+      <div class="mt-6 flex items-center gap-3">
+        <input
+          value="tabarrukziyorat.uz/news/2025-yil..."
+          readonly
+          class="bg-gray-800 px-4 py-2 rounded-lg w-full text-sm outline-none"
+        />
+      </div>
+    </main>
 
-interface Card {
-  image: string
-  title: string
-  desc?: string
-  date: string
-}
+    <footer class="text-center text-xs text-gray-500 mt-20 pb-10">
+      2025 Tabarruk Ziyorat
+    </footer>
 
-const props = defineProps<{ cards: Card[] }>()
+  </div>
+  <script>
+import CopyLink from "@/components/CopyLink.vue";
+
+export default {
+  components: {
+    CopyLink
+  }
+};
 </script>
+</template>
