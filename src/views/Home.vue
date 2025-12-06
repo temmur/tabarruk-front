@@ -29,6 +29,7 @@
       <TravelStats/>
     <CountriesCard :countries = "countries"/>
       <NewsCards :cards="cards"/>
+      <InstagramCard/>
     </div>
   </div>
 </template>
@@ -43,6 +44,7 @@ import NewsCards from "@/cards/newsCards.vue";
 import DestinationCards from "@/cards/destinationCards.vue";
 
 import CAbout from '@/components/Sections/CAbout.vue';
+import InstagramCard from "@/components/InstagramCard.vue";
 
 const cards = ref(
     [

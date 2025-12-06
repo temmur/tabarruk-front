@@ -6,6 +6,5 @@ import InstagramCard from "./components/InstagramCard.vue"
 <template>
   <div>
     <router-view/>
-    <InstagramCard/>
   </div>
 </template>
