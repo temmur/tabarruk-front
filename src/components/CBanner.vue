@@ -8,7 +8,7 @@
     </div>
     <div class="imgs absolute inset-0 bg-black/40"></div>
 
-    <div class="hero-overlay">
+    <div class="absolute">
         <img src="/public/Vector (6).svg">
     </div>
 
