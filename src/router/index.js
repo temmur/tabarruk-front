@@ -11,7 +11,9 @@ import Religions from '@/views/Religions.vue'
 import Help from '@/views/Help.vue'
 import Faq from '@/views/Faq.vue'
 import PCountriesSingle from '@/views/Countries/PIndex.vue'
-import NewsSingle from '@/views/NewsSingle.vue'
+import NewsSingle from "@/views/NewsSingle.vue";  
+
+
 
 const routes = [
     {
