@@ -121,16 +121,16 @@ onBeforeUnmount(stopSlider)
 .hero-overlay {
   position: absolute;
   z-index: 100;
-  inset: 0;
+
   background: linear-gradient(
-      to right,
+  to center,
       rgba(0, 0, 0, 0.2),
       rgba(0, 0, 0, 0.2),
       rgba(0, 0, 0, 0.2)
   );
 }
 .hero-overlay img{
-  z-index: 10;
+  z-index: -10;
 }
 .hero-inner {
   position: relative;

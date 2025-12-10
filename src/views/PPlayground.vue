@@ -1,8 +1,13 @@
 <script setup>
 import {computed, onMounted, ref} from 'vue'
-
+import CBreadCrumb from '@/Common/CBreadCrumb.vue'
 const api = 'https://jsonplaceholder.typicode.com'
-
+const routes = computed(()=> [
+  {
+    label: "About",
+    link: '/about'
+  }
+])
 const userData = ref({
   title: '',
   body: ''
@@ -71,6 +76,7 @@ onMounted(()=> {
 <template>
   <form @submit.prevent="addUser" class="mt-50">
     <input v-model="userData.title" placeholder="title" />
+      <CBreadCrumb v-bind="{routes}"/>
     <textarea v-model="userData.body"></textarea>
     <button type="submit">Add user</button>
   </form>
