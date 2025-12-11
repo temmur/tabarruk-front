@@ -11,6 +11,9 @@ import Religions from '@/views/Religions.vue'
 import Help from '@/views/Help.vue'
 import Faq from '@/views/Faq.vue'
 import PCountriesSingle from '@/views/Countries/PIndex.vue'
+import NewsSingle from "@/views/NewsSingle.vue";  
+
+
 
 const routes = [
     {
@@ -25,6 +28,11 @@ const routes = [
             {path: '/playground',
                 name: 'Playground',
                 component: ()=> import('@/views/PPlayground.vue')},
+                  {
+    path: '/news/:id',
+    name: 'news-detail',
+    component: NewsSingle,
+  },
             { path: 'countries', name: 'Countries', component: Countries },
             { path: 'map', name: 'Map', component: Map },
             { path: 'religions', name: 'Religions', component: Religions },
@@ -41,3 +49,4 @@ const router = createRouter({
 
 
 export default router;
+
