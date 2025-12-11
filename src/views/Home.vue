@@ -1,43 +1,20 @@
 <template>
-  <div>
+  <div class="overflow-hidden">
     <CBanner/>
-    <div class="w-full overflow-hidden cursor-pointer relative">
-      <div
-          class="flex animate-scroll"
-          @mouseenter="paused = true"
-          @mouseleave="paused = false"
-          :class="{ 'pause-animation': paused }"
-      >
-        <div
-            v-for="(card, index) in loopedCards"
-            :key="index"
-            class="flex-none backdrop-blur-sm bg-gray-500 border border-white rounded-lg shadow-lg p-2 flex items-center w-[400px] h-[100px] mr-4
-               transform transition-transform duration-500 hover:scale-105 hover:shadow-2xl"
-        >
-          <img :src="card.image" alt="Destination" class="w-20 h-20 object-cover rounded-lg" />
-          <div class="ml-5 flex flex-col justify-center gap-2">
-            <p class="text-[10px] text-gray-600 font-medium leading-tight">{{ card.subtitle }}</p>
-            <p class="text-2xl text-white font-semibold mt-1 leading-tight">{{ card.title }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="flex text-white items-center mt-4">
-    </div>
-    <div class="mt-10">
+    <CHomeCarousel/>
           <CAbout/>
       <TravelStats/>
     <CountriesCard :countries = "countries"/>
       <NewsCards :cards="cards"/>
       <InstagramCard/>
-      <Particles :items="institutions" :repeat-count="4" />
     </div>
-  </div>
+  <Particles :items="institutions" :repeat-count="999" />
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted,onBeforeUnmount } from 'vue';
 import CButtons from "@/components/CButtons.vue";
+import CHomeCarousel from '@/cards/CHomeCarousel.vue';
 import CBanner from "@/components/CBanner.vue";
 import TravelStats from "@/cards/TravelStats.vue";
 import CountriesCard from '../components/sections/CountriesCard.vue'
