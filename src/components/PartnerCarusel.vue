@@ -1,8 +1,22 @@
 <template>
+  <div class="all-card">
+  <div class="hero">
+    <div class="hero-text">
+      <h1>Hamkorlar</h1>
+      <div class="hd"></div>
+      <p>Ushbu veb-sayt turkiy mamlakatlarda joylashgan tarixiy, noyob joylar haqida ma'lumot almashish uchun yaratilgan.
+
+        Tabarruk logo
+      </p>
+    </div>
+  </div>
+
   <div class="carousel-wrapper">
     <div class="center-circle">
       <div class="center-inner">
-        <span class="center-logo">★</span>
+        <div class="center-logo">
+        <img class="center-logo" src="/images/partners/partners-logo.svg">
+        </div>
       </div>
     </div>
 
@@ -46,16 +60,17 @@
       </div>
     </div>
   </div>
+  </div>
 </template>
 
 <script setup>
 import { computed, ref } from 'vue'
 
 const items = ref([
-  { id: 1, title: 'ADMINISTRATSIYA', logo: '/images/admin.svg' },
-  { id: 2, title: 'TURIZM QO‘MITASI', logo: '/images/tourism.svg' },
-  { id: 3, title: 'EKOLOGIYA VAZIRLIGI', logo: '/images/eco.svg' },
-  { id: 4, title: 'BOSHQA TASHKILOT', logo: '/images/other.svg' }
+  { id: 1, title: '', logo: '/images/partners/Layer_1.svg' },
+  { id: 2, title: '', logo: '/images/partners/1.png' },
+  { id: 3, title: '', logo: '/images/partners/2.png' },
+  { id: 4, title: '', logo: '/images/partners/3.png' }
 ])
 
 const loopedItems = computed(() => [...items.value, ...items.value])
@@ -73,24 +88,50 @@ const isBottomPaused = ref(false)
   overflow: hidden;
 }
 
-.center-circle {
+.hero{
+  padding-top: 50px;
+}
+
+.hero-text{
+  text-align: center;
+  color: white;
+}
+
+.hero-text h1{
+  font-size: 50px;
+}
+
+.hero-text p {
+  font-size: 20px;
+}
+
+.hd {
+  color: red;
+  display: flex;
+  overflow: hidden;
+  background-color: red;
+  height: 3px;
+  width: 220px;
+  margin: 0 auto;
+}
+
+.center-circle img {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 3;
 }
-.center-inner {
+.center-inner img  {
   width: 120px;
-  height: 120px;
+  height: 320px;
   border-radius: 50%;
-  background: radial-gradient(circle, #ff6a5c 0, #ff3b30 60%, transparent 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 40px rgba(255, 59, 48, 0.7);
+
 }
-.center-logo {
+.center-logo  {
   color: #fff;
   font-size: 42px;
 }
@@ -102,10 +143,11 @@ const isBottomPaused = ref(false)
   overflow: hidden;
 }
 .row-top {
-  top: 20px;
+  top: 12px;
 }
 .row-bottom {
-  bottom: 20px;
+  bottom: 9px;
+  padding-top: 10px;
 }
 
 .row-track {
@@ -126,12 +168,12 @@ const isBottomPaused = ref(false)
 }
 
 .card {
-  width: 360px;
+  width: 300px;
   height: 120px;
   margin: 0 7px;
   border-radius: 18px;
   background: #111729;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 2px solid #2c3e50;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -140,7 +182,7 @@ const isBottomPaused = ref(false)
   opacity: 0.6;
 }
 .card-logo {
-  max-height: 42px;
+  max-height: 52px;
   margin-right: 10px;
 }
 .card-title {
