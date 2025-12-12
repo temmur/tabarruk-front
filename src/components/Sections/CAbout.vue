@@ -1,6 +1,6 @@
 <template>
-  <section class="px-6 md:px-20 py-16 text-white">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
+  <section class="px-6 md:px-20 py-16 text-white bg-[url('/images/bg-vector.svg')] bg-cover bg-center">
+    <div class="container grid md:grid-cols-2 gap-10">
 
       <div>
         <h2 class="text-4xl font-bold mb-4 border-b-2 border-red-500 pb-2">
@@ -13,14 +13,8 @@
         </p>
 
         <div class="supporter-container mt-8">
-          <div class="supporter-item" v-for="(item, i) in supporters" :key="i">
-            
-            <!-- <img :src="item.img" alt="logo" class="group" />
-
-            <div class="group:hover">
-              {{ item.text }}
-            </div> -->
-            <div class="group inline-block relative flex! items-center">
+          <div class="supporter-item " v-for="(item, i) in supporters" :key="i" >
+            <div class="group relative flex items-center">
   <img :src="item.img" alt="logo" class="object-cover" />
 
   <div 
@@ -28,13 +22,13 @@
       opacity-0 
       group-hover:opacity-100 
       hidden
-      group-hover:block
+      group-hover:inline-block
       group-hover:w-full
       transition-opacity 
       duration-300 
-      flex items-center justify-center 
-      text-white text-lg font-semibold 
-      bg-black/50
+       items-center justify-center 
+      text-white text-sm font-semibold
+      max-w-[400px] 
     "
   >
     {{ item.text }}
@@ -69,16 +63,13 @@ const supporters = [
 <style scoped>
 .supporter-container {
   display: flex;
-  gap: 20px;
+  gap: 10px;
 }
 
 .supporter-item {
   border-radius: 14px;
-  padding: 15px 20px;
   display: flex;
   align-items: center;
-  position: relative;
-  overflow: hidden;
   cursor: pointer;
   transition: 0.35s ease;
 }

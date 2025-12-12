@@ -1,3 +1,4 @@
 <template>
-  footer vue
+  <div class="content">footer vue</div>
+
 </template>
