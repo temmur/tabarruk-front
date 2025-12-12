@@ -14,6 +14,7 @@
         </span>
       </div>
 
+      
       <div class="flex justify-center">
         <img
           src="https://tabarrukziyorat.uz/media/news/2881_turkic-ski-cup-to-take-place-on-18-february-2025-at-amirsoy-ski-resort-uzbekistan_f.jpg"
