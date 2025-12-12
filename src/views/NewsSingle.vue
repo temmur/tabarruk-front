@@ -3,14 +3,14 @@
  
     <main class="max-w-3xl mx-auto px-4 text-left">
 
-      <h1 class=" font-semibold leading-snug  text-4xl">2025-yil 18-fevral kuni O‘zbekistondagi <br> Amirsoy tog‘-chang‘i kurortida chang‘i <br> bo‘yicha Turkiy davlatlar kubogi bo‘lib <br> o‘tadi  </h1>
+      <h1 class=" font-semibold leading-snug text-4xl max-lg:text-lg">2025-yil 18-fevral kuni O‘zbekistondagi Amirsoy tog‘-chang‘i kurortida chang‘i bo‘yicha Turkiy davlatlar kubogi bo‘lib o‘tadi</h1>
 
       <div class="flex items-center gap-4 text-gray-400 text-base mb-6">
         <span class="flex items-center mt-6">
           <i class="fa-regular fa-calendar"></i> 11.02.2025
         </span>
         <span class="flex items-center mt-6 text-gray-400 text-base">
-          <i class="fa-regular fa-eye fa-gray-400"></i> 40
+          <i class="fa-regular fa-eye"></i> 40
         </span>
       </div>
 
@@ -21,7 +21,7 @@
         />
       </div>
 
-      <p class="text-gray-300 text-sm leading-relaxed mt-4 text-xs">Turkiy davlatlar tashkiloti (TDT) 2025-yil 18-fevral kuni O‘zbekistondagi Amirsoy tog‘-chang‘i kurortida bo‘lib o‘tadigan chang‘i sporti bo‘yicha Turkiy davlatlar kubogini mamnuniyat bilan e’lon qiladi.</p>
+      <p class="text-gray-300 text-sm leading-relaxed mt-4 text-xs max-lg:text-sm">Turkiy davlatlar tashkiloti (TDT) 2025-yil 18-fevral kuni O‘zbekistondagi Amirsoy tog‘-chang‘i kurortida bo‘lib o‘tadigan chang‘i sporti bo‘yicha Turkiy davlatlar kubogini mamnuniyat bilan e’lon qiladi.</p>
 
     </main>
 <CopyLink/>
