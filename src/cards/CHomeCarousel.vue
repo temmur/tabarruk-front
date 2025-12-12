@@ -1,6 +1,6 @@
 <template>
      <div
-          class="flex animate-scroll relative -top-20"
+          class="flex animate-scroll relative -top-20 overflow-hidden!"
           @mouseenter="paused = true"
           @mouseleave="paused = false"
           :class="{ 'pause-animation': paused }"

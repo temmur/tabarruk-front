@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="overflow-hidden">
     <CBanner/>
     <CHomeCarousel/>
           <CAbout/>
@@ -7,8 +7,8 @@
     <CountriesCard :countries = "countries"/>
       <NewsCards :cards="cards"/>
       <InstagramCard/>
-  
-  </div>
+    </div>
+  <Particles :items="institutions" :repeat-count="999" />
 </template>
 
 <script setup lang="ts">
@@ -23,6 +23,31 @@ import DestinationCards from "@/cards/destinationCards.vue";
 
 import CAbout from '@/components/Sections/CAbout.vue';
 import InstagramCard from "@/components/InstagramCard.vue";
+import Particles from "@/components/PartnerCarusel.vue";
+
+
+const institutions = [
+  {
+    id: 1,
+    title: "O'zbekiston Respublikasi Prezident Administratsiyasi",
+    logo: '/img/admin.svg',
+  },
+  {
+    id: 2,
+    title: 'Turizm qo‘mitasi',
+    logo: '/img/tourism.svg',
+  },
+  {
+    id: 3,
+    title: 'Ekologiya vazirligi',
+    logo: '/img/eco.svg',
+  },
+  {
+    id: 4,
+    title: 'Favqulodda vaziyatlar vazirligi',
+    logo: '/images/Vector (6).svg',
+  },
+]
 
 const cards = ref(
     [
@@ -40,6 +65,31 @@ const countries =[
   { name: "Kyrgyzstan", image: "https://tabarrukziyorat.uz/media/country_flags/Kyrgyzstan.svg" ,desc:"19 destinations" },
   { name: "Hungary", image: "https://tabarrukziyorat.uz/media/country_flags/Hungary.svg" ,desc:"14 destinations" },
 ]
+
+
+
+
+
+const carouselCards = ref([
+  { id: 1, image: 'https://tabarrukziyorat.uz/media/destination_images/Axtam_Sahoba_Adhamsahoba.jpg', title: 'Ahtansob', subtitle: 'Toshkent region, Uzbekistan', visible: false },
+  { id: 2, image: 'https://tabarrukziyorat.uz/media/destination_images/IMG_6383.jpg', title: 'Abiwerd Peshtak', subtitle: 'Mary province, Turkmenistan', visible: false },
+  { id: 3, image: 'https://tabarrukziyorat.uz/media/destination_images/Рисунок3_W24FO57.jpg', title: 'Amir Ahmad Bukhari Mosque', subtitle: 'Istanbul, Turkey', visible: false },
+  { id: 4, image: 'https://tabarrukziyorat.uz/media/destination_images/maxresdefault.jpg', title: 'Ancient settlement Balasagun', subtitle: 'Zhambyl region, Kazakhstan' },
+  { id: 5, image: 'https://tabarrukziyorat.uz/media/destination_images/c4818299c0b1420401ae51135793a987_4.jpg', title: 'Abdurrahman Arnavut’s tomb', subtitle: 'Veszprém, Hungary' },
+  { id: 6, image: 'https://tabarrukziyorat.uz/media/destination_images/e72a32a4e5fa6016ced565677acfc453.jpg', title: 'Akyrtas palace complex', subtitle: 'Zhambyl region, Kazakhstan' },
+  { id: 7, image: 'https://tabarrukziyorat.uz/media/destination_images/Screenshot_20190819-152258_Google.jpg', title: 'Ancient citadel of Shymkent', subtitle: 'Shymkent city, Kazakhstan' },
+  { id: 8, image: 'https://tabarrukziyorat.uz/media/destination_images/3_zL7Uu07.jpg', title: 'Ancient city of Otrar', subtitle: 'Turkestan region, Kazakhstan' },
+  { id: 9, image: 'https://tabarrukziyorat.uz/media/destination_images/wn1kiDadyug.jpg', title: 'Ancient settlement Ancient Taraz', subtitle: 'Zhambyl region, Kazakhstan' },
+  { id: 10, image: 'https://tabarrukziyorat.uz/media/destination_images/image_2025-01-20_16-49-26.jpg', title: 'Ancient settlement Auliye-bastau', subtitle: 'Zhambyl region, Kazakhstan' }
+
+]);
+
+
+const loopedCards = ref([...carouselCards.value, ...carouselCards.value]);
+
+const paused = ref(false);
+
+
 </script>
 
 
