@@ -1,4 +1,7 @@
-<template>
- <p class="text-white"> Faq vue</p>
-</template>
+<script setup lang="ts">
+import CQuestions from '@/components/CQuestions.vue'
+</script>
 
+<template>
+  <CQuestions />
+</template>
