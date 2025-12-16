@@ -9,7 +9,7 @@
     <div class="imgs absolute inset-0 bg-black/40"></div>
 
     <div class="hero-overlay">
-        <img src="/Vector (6).svg?url">
+        <img src="/public/Vector (6).svg">
     </div>
 
     <div class="hero-inner">

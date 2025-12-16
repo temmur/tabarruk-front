@@ -61,6 +61,3 @@
     <p class="mt-10 ml-25">© 2025, Tabarruk Ziyorat</p>
   </div>
 </template>
-<script setup lang="ts">
-import {RouterLink} from "vue-router";
-</script>
