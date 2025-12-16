@@ -1,5 +1,5 @@
 <template>
-  <div class="relative">
+  <div class="relative ">
     <!--language flag -->
     <button
         @click="dropdownOpen = !dropdownOpen"
@@ -12,14 +12,14 @@
     <!-- Dropdown list -->
     <ul
         v-if="dropdownOpen"
-        class="absolute right-0 mt-2 bg-[#132153] border rounded-md shadow-md w-32 z-50"
+        class="absolute right-0  bg-gray-900/40 backdrop-blur-5xl shadow-md p-3 rounded-md w-95 h-40 grid grid-cols-3"
     >
       <li v-for="lang in languages" :key="lang.code">
         <button
             @click="setLanguage(lang.code)"
-            class="flex items-center gap-2 px-3 py-2 hover:bg-[#101B45] rounded transition-colors cursor-pointer w-full text-left"
+            class=" items-center px-3 py-2 ml-3 flex gap-1 hover:bg-gray-700 rounded transition-colors cursor-pointer w-full text-left  -translate-x-2"
         >
-          <img :src="lang.flag" class="w-4 h-4 rounded-full" />
+          <img :src="lang.flag" class="w-5 h-5 rounded-full" alt="langauges-flag"/>
           <span class="text-sm text-white">{{ lang.name }}</span>
         </button>
       </li>

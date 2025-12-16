@@ -9,12 +9,14 @@
     <div class="imgs absolute inset-0 bg-black/40"></div>
 
     <div class="hero-overlay">
-        <img src="/public/Vector (6).svg">
+        <img src="/Vector (6).svg?url">
     </div>
 
     <div class="hero-inner">
       <div class="hero-text">
-        <p class="hero-location">
+        <p class="hero-location"
+           :class="slides[currentIndex].icon"
+        >
           {{ slides[currentIndex].location }}
         </p>
 
@@ -51,6 +53,7 @@ import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 const slides = ref([
   {
     image: '/images/1.jpg',
+    icon:'ri-map-pin-line',
     location: "Samarqand viloyati, O'zbekiston",
     title: 'Registon',
     description:
@@ -58,6 +61,7 @@ const slides = ref([
   },
   {
     image: '/images/2.jpg',
+    icon:'ri-map-pin-line',
     location: "Turkiston Shahri viloyati",
     title: "O'trar Shahri",
     description:
@@ -65,6 +69,7 @@ const slides = ref([
   },
   {
     image: '/images/3.jpg',
+    icon:'ri-map-pin-line',
     location: "Sulton Uvays Qaroniy masjidi",
     title: 'Ichan qal’a',
     description:

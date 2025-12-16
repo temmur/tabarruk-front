@@ -1,5 +1,5 @@
 <template>
-  <section class="w-full py-12 bg-gray-800 flex flex-col items-center">
+  <section class="w-full py-12  flex flex-col items-center">
     <!-- Title -->
     <h2 class="text-4xl text-white font-semibold text-center mb-2 font-serif  underline underline-offset-[13px] decoration-red-500 decoration-2 capitalize">how many countries?</h2>
     <!-- Subtitle -->
@@ -11,12 +11,11 @@
           v-for="(country, index) in props.countries"
           :key="index"
           class="relative z-10 w-full grid items-center p-2 pb-8 rounded-lg opacity-90 cursor-pointer
-         hover:brightness-140 hover:dark:bg-gray-400
-         transition-all duration-300
-
-         before:content-[''] before:absolute before:left-1/2 before:-translate-x-1/2
-          before:bottom-0 before:h-[2px] before:bg-gray-400 before:w-7 hover:before:w-75 overflow-hidden
- before:transition-all before:duration-300"
+          hover:brightness-130
+          transition-all duration-300 hover:bg-gray-700
+          before:content-[''] before:absolute hover:before:bg-white before:left-1/2 before:-translate-x-1/2
+          before:bottom-0 before:h-[2.5px]  before:w-7 hover:before:w-75 overflow-hidden
+          before:transition-all before:duration-300"
       >
        <img
             :src="country.image"
@@ -31,7 +30,6 @@
 </template>
 
 <script setup lang="ts">
-import {defineProps} from 'vue'
 interface Country{
   name:string,
   image: string,
@@ -39,5 +37,5 @@ interface Country{
 }
 const props = defineProps<{
   countries:Country[]
-}>( )
+}>()
 </script>

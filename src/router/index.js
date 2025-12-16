@@ -11,7 +11,7 @@ import Religions from '@/views/Religions.vue'
 import Help from '@/views/Help.vue'
 import Faq from '@/views/Faq.vue'
 import PCountriesSingle from '@/views/Countries/PIndex.vue'
-
+import Privacy from '@/views/Privacy.vue'
 const routes = [
     {
         path: '/',
@@ -30,6 +30,7 @@ const routes = [
             { path: 'religions', name: 'Religions', component: Religions },
             { path: 'help', name: 'Help', component: Help },
             { path: 'faq', name: 'Faq', component: Faq },
+            {path:'privacy', name:'Privacy', component:Privacy},
         ]
     }
 ];

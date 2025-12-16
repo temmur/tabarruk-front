@@ -1,27 +1,7 @@
 <template>
-  <div>
+  <div  class="overflow-hidden">
     <CBanner/>
-    <div class="w-full overflow-hidden cursor-pointer relative">
-      <div
-          class="flex animate-scroll"
-          @mouseenter="paused = true"
-          @mouseleave="paused = false"
-          :class="{ 'pause-animation': paused }"
-      >
-        <div
-            v-for="(card, index) in loopedCards"
-            :key="index"
-            class="flex-none backdrop-blur-sm bg-gray-500 border border-white rounded-lg shadow-lg p-2 flex items-center w-[400px] h-[100px] mr-4
-               transform transition-transform duration-500 hover:scale-105 hover:shadow-2xl"
-        >
-          <img :src="card.image" alt="Destination" class="w-20 h-20 object-cover rounded-lg" />
-          <div class="ml-5 flex flex-col justify-center gap-2">
-            <p class="text-[10px] text-gray-600 font-medium leading-tight">{{ card.subtitle }}</p>
-            <p class="text-2xl text-white font-semibold mt-1 leading-tight">{{ card.title }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <DestinationsCards/>
     <div class="flex text-white items-center mt-4">
     </div>
     <div class="mt-10">
@@ -30,54 +10,15 @@
       <NewsCards :cards="cards"/>
     </div>
   </div>
-
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted,onBeforeUnmount } from 'vue';
-import CButtons from "@/components/CButtons.vue";
+import { cards, countries, carouselCards } from '@/data/DCardsData.js';
 import CBanner from "@/components/CBanner.vue";
 import TravelStats from "@/cards/TravelStats.vue";
-import CountriesCard from '../components/sections/CountriesCard.vue'
+import CountriesCard from '@/components/Sections/CountriesCard.vue'
 import NewsCards from "@/cards/newsCards.vue";
-import DestinationCards from "@/cards/destinationCards.vue";
-const cards = ref(
-    [
-      {image:'https://tabarrukziyorat.uz/media/news/2881_turkic-ski-cup-to-take-place-on-18-february-2025-at-amirsoy-ski-resort-uzbekistan_f.jpg', title:'Turkic Ski Cup to take place on 18 February 2025 at Amirsoy Ski...', date:'2025-02-11'},
-      {image:'https://tabarrukziyorat.uz/media/news/3107371.280b8123ff0ad60be67f8166274746b1.jpg', title:'Interview with Ambassador Kubanychbek Omuraliev', desc:'Interview with Ambassador Kubanychbek Omuraliev, Secretary General of the OT...', date:'2025-02-03'},
-      {image:'https://tabarrukziyorat.uz/media/news/photo_2024-10-03_15-31-00.jpg', title:'As part of the "Tabarruk Ziyorat" project, a presentation of the platfor...', desc:'In order to implement the decree of the President of the Republic of Uzbekist...', date:'2024-03-11'},
-    ]
-)
-const countries =[
-  { name: "Uzbekistan", image: "https://tabarrukziyorat.uz/media/country_flags/Uzbekistan.svg", desc:"175 destinations" },
-  { name: "Turkey", image: "https://tabarrukziyorat.uz/media/country_flags/Turkey_lzgDBoT.svg",desc:"150 destinations" },
-  { name: "Turkmenistan", image: "https://tabarrukziyorat.uz/media/country_flags/Turkmenistan.svg",desc:"20 destinations"  },
-  { name: "Azerbaijan", image: "https://tabarrukziyorat.uz/media/country_flags/Azerbaijan.svg" ,desc:"0 destinations" },
-  { name: "Kazakhstan", image: "https://tabarrukziyorat.uz/media/country_flags/Kazakhstan.svg",desc:"51 destinations"  },
-  { name: "Kyrgyzstan", image: "https://tabarrukziyorat.uz/media/country_flags/Kyrgyzstan.svg" ,desc:"19 destinations" },
-  { name: "Hungary", image: "https://tabarrukziyorat.uz/media/country_flags/Hungary.svg" ,desc:"14 destinations" },
-]
-
-const carouselCards = ref([
-  { id: 1, image: 'https://tabarrukziyorat.uz/media/destination_images/Axtam_Sahoba_Adhamsahoba.jpg', title: 'Ahtansob', subtitle: 'Toshkent region, Uzbekistan', visible: false },
-  { id: 2, image: 'https://tabarrukziyorat.uz/media/destination_images/IMG_6383.jpg', title: 'Abiwerd Peshtak', subtitle: 'Mary province, Turkmenistan', visible: false },
-  { id: 3, image: 'https://tabarrukziyorat.uz/media/destination_images/Рисунок3_W24FO57.jpg', title: 'Amir Ahmad Bukhari Mosque', subtitle: 'Istanbul, Turkey', visible: false },
-  { id: 4, image: 'https://tabarrukziyorat.uz/media/destination_images/maxresdefault.jpg', title: 'Ancient settlement Balasagun', subtitle: 'Zhambyl region, Kazakhstan' },
-  { id: 5, image: 'https://tabarrukziyorat.uz/media/destination_images/c4818299c0b1420401ae51135793a987_4.jpg', title: 'Abdurrahman Arnavut’s tomb', subtitle: 'Veszprém, Hungary' },
-  { id: 6, image: 'https://tabarrukziyorat.uz/media/destination_images/e72a32a4e5fa6016ced565677acfc453.jpg', title: 'Akyrtas palace complex', subtitle: 'Zhambyl region, Kazakhstan' },
-  { id: 7, image: 'https://tabarrukziyorat.uz/media/destination_images/Screenshot_20190819-152258_Google.jpg', title: 'Ancient citadel of Shymkent', subtitle: 'Shymkent city, Kazakhstan' },
-  { id: 8, image: 'https://tabarrukziyorat.uz/media/destination_images/3_zL7Uu07.jpg', title: 'Ancient city of Otrar', subtitle: 'Turkestan region, Kazakhstan' },
-  { id: 9, image: 'https://tabarrukziyorat.uz/media/destination_images/wn1kiDadyug.jpg', title: 'Ancient settlement Ancient Taraz', subtitle: 'Zhambyl region, Kazakhstan' },
-  { id: 10, image: 'https://tabarrukziyorat.uz/media/destination_images/image_2025-01-20_16-49-26.jpg', title: 'Ancient settlement Auliye-bastau', subtitle: 'Zhambyl region, Kazakhstan' }
-
-]);
-
-
-const loopedCards = ref([...carouselCards.value, ...carouselCards.value]);
-
-const paused = ref(false);
-
-
+import DestinationsCards from '@/cards/DestinationCards.vue'
 </script>
 
 
