@@ -86,7 +86,7 @@ const supporters = [
   color: #e5e7eb;
   opacity: 0;
   transition: opacity 0.35s ease;
-  
+
 }
  
 </style>

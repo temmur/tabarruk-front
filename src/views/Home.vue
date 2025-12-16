@@ -5,7 +5,7 @@
           <CAbout/>
       <TravelStats/>
     <CountriesCard :countries = "countries"/>
-      <NewsCards :cards="cards"/>
+      <New+sCards :cards="cards"/>
       <InstagramCard/>
     </div>
   <Particles :items="institutions" :repeat-count="999" />
