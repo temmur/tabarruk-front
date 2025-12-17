@@ -1,13 +1,13 @@
 <template>
-<div>
-  <div class="relative bg-[url('/images/New_uzbekistan.jpg')] bg-cover bg-center h-screen bg-no-repeat">
+<div class="text-sm sm:text-base lg:text-xl p-2 sm:p-6sw ">
+  <div class="relative bg-[url('/images/New_uzbekistan.jpg')] bg-cover bg-center h-screen bg-no-repeat ">
     <div class="absolute inset-0 bg-gray-900/70"></div>
 
       <img src="/images/Vector%20(6).svg" alt=""
            class="absolute"
       >
       <div class="relative z-10 text-white p-10 flex flex-col justify-center items-center h-full">
-        <h1 class="text-8xl font-bold">Uzbeksitan</h1>
+        <h1 class="text-8xl font-bold max-md:text-4xl max-sm:text-xl">Uzbeksitan</h1>
 
         <p class="text-xl mt-4 font-normal">Uzbekistan (officially: Republic of Uzbekistan) is a country located in the central part of Central Asia.</p>
         <CButtons variant="red" text="Watch video" button-class="mt-4 cursor-pointer">
@@ -41,10 +41,22 @@
         </div>
       </div>
   </div>
+<div class="flex items-center justify-center gap-4 relative -top-10 max-lg:block ">
+  <CCountryStatistics class="max-md:text-4xl max-sm:text-xl max-sm:m-auto max-sm:mb-2  " />
+  <div class="flex items-center ">
+    <CCountryCardGroup :data="countryCtatistic"/>
 </div>
+
+  </div>
+
+</div>
+
 </template>
 <script setup lang="ts">
 import CButtons from "@/components/CButtons.vue";
+import CCountryStatisticCard from "@/components/CCountryStatisticCard.vue";
+import CCountryStatistics from "@/components/Country/CCountryStatistics.vue";
+import CCountryCardGroup from "@/components/CCountryCardGroup.vue";
 import {onMounted, ref, computed, watch} from "vue";
 
 const inputVal = ref<String>('')
@@ -53,6 +65,13 @@ const debouncedSearch = ref('')
 let debounceTimer = null
 const isLoading = ref(false)
 const error = ref(null)
+const countryCtatistic = ref([
+  {
+icon: 'icon-mosque',
+    statistic:'',
+    title: ''
+  },
+])
 
 watch(inputVal,(val)=> {
   clearTimeout(debounceTimer)
@@ -92,4 +111,7 @@ if(!query) users.value
 onMounted(()=> {
   fetchUsers(5)
 })
+
 </script>
+
+

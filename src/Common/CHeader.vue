@@ -13,7 +13,6 @@
 
       <!-- Right side -->
       <div class="hidden md:flex items-center gap-5 text-gray-800 relative">
-
         <!-- Navbar links -->
         <CNavbar />
 
