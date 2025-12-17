@@ -24,7 +24,7 @@
           @blur="onBlur"
           class="w-full px-4 py-2
            bg-white/10 text-white border border-white
-           rounded-lg focus:outline-none focus:ring-0 "
+           rounded-lg focus:outline-none focus:ring-0 backdrop-blur-2xl"
       />
       <div
           v-if="focused && query"

@@ -1,51 +1,76 @@
 <template>
-<CBanner/>
-  <div class="w-full overflow-hidden cursor-pointer relative">
-    <div
-        class="flex animate-scroll"
-        @mouseenter="paused = true"
-        @mouseleave="paused = false"
-        :class="{ 'pause-animation': paused }"
-    >
-      <div
-          v-for="(card, index) in loopedCards"
-          :key="index"
-          class="flex-none bg-gray-300 border border-white rounded-lg shadow-lg p-2 flex items-center w-[400px] h-[100px] mr-4
-               transform transition-transform duration-500 hover:scale-105 hover:shadow-2xl"
-      >
-        <img :src="card.image" alt="Destination" class="w-20 h-20 object-cover rounded-lg" />
-        <div class="ml-5 flex flex-col justify-center gap-2">
-          <p class="text-[10px] text-gray-600 font-medium leading-tight">{{ card.subtitle }}</p>
-          <p class="text-2xl text-white font-semibold mt-1 leading-tight">{{ card.title }}</p>
-        </div>
-      </div>
+  <div class="overflow-hidden">
+    <CBanner/>
+    <CHomeCarousel/>
+          <CAbout/>
+      <TravelStats/>
+    <CountriesCard :countries = "countries"/>
+      <New+sCards :cards="cards"/>
+      <InstagramCard/>
     </div>
-  </div>
-  <div class="space-x-4 flex text-white items-center">
-   <CButtons text="More About Us " variant="blue">
-
-<template #suffix>➜</template>
-   </CButtons>
-
-    <CButtons variant="red">
-<template #prefix>🌐</template>
-      Explore
-    </CButtons>
-
-  </div>
-  <router-link to="country/2">Hello</router-link>
+  <Particles :items="institutions" :repeat-count="999" />
 </template>
 
-
-
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted,onBeforeUnmount } from 'vue';
-import ExploreButton from "@/Buttons/ExploreButton.vue";
-import AboutButton from "@/Buttons/AboutButton.vue";
 import CButtons from "@/components/CButtons.vue";
+import CHomeCarousel from '@/cards/CHomeCarousel.vue';
 import CBanner from "@/components/CBanner.vue";
+import TravelStats from "@/cards/TravelStats.vue";
+import CountriesCard from '../components/sections/CountriesCard.vue'
+import NewsCards from "@/cards/newsCards.vue";
+import DestinationCards from "@/cards/destinationCards.vue";
 
-const cards = ref([
+import CAbout from '@/components/Sections/CAbout.vue';
+import InstagramCard from "@/components/InstagramCard.vue";
+import Particles from "@/components/PartnerCarusel.vue";
+
+
+const institutions = [
+  {
+    id: 1,
+    title: "O'zbekiston Respublikasi Prezident Administratsiyasi",
+    logo: '/img/admin.svg',
+  },
+  {
+    id: 2,
+    title: 'Turizm qo‘mitasi',
+    logo: '/img/tourism.svg',
+  },
+  {
+    id: 3,
+    title: 'Ekologiya vazirligi',
+    logo: '/img/eco.svg',
+  },
+  {
+    id: 4,
+    title: 'Favqulodda vaziyatlar vazirligi',
+    logo: '/images/Vector (6).svg',
+  },
+]
+
+const cards = ref(
+    [
+      {image:'https://tabarrukziyorat.uz/media/news/2881_turkic-ski-cup-to-take-place-on-18-february-2025-at-amirsoy-ski-resort-uzbekistan_f.jpg', title:'Turkic Ski Cup to take place on 18 February 2025 at Amirsoy Ski...', date:'2025-02-11'},
+      {image:'https://tabarrukziyorat.uz/media/news/3107371.280b8123ff0ad60be67f8166274746b1.jpg', title:'Interview with Ambassador Kubanychbek Omuraliev', desc:'Interview with Ambassador Kubanychbek Omuraliev, Secretary General of the OT...', date:'2025-02-03'},
+      {image:'https://tabarrukziyorat.uz/media/news/photo_2024-10-03_15-31-00.jpg', title:'As part of the "Tabarruk Ziyorat" project, a presentation of the platfor...', desc:'In order to implement the decree of the President of the Republic of Uzbekist...', date:'2024-03-11'},
+    ]
+)
+const countries =[
+  { name: "Uzbekistan", image: "https://tabarrukziyorat.uz/media/country_flags/Uzbekistan.svg", desc:"175 destinations" },
+  { name: "Turkey", image: "https://tabarrukziyorat.uz/media/country_flags/Turkey_lzgDBoT.svg",desc:"150 destinations" },
+  { name: "Turkmenistan", image: "https://tabarrukziyorat.uz/media/country_flags/Turkmenistan.svg",desc:"20 destinations"  },
+  { name: "Azerbaijan", image: "https://tabarrukziyorat.uz/media/country_flags/Azerbaijan.svg" ,desc:"0 destinations" },
+  { name: "Kazakhstan", image: "https://tabarrukziyorat.uz/media/country_flags/Kazakhstan.svg",desc:"51 destinations"  },
+  { name: "Kyrgyzstan", image: "https://tabarrukziyorat.uz/media/country_flags/Kyrgyzstan.svg" ,desc:"19 destinations" },
+  { name: "Hungary", image: "https://tabarrukziyorat.uz/media/country_flags/Hungary.svg" ,desc:"14 destinations" },
+]
+
+
+
+
+
+const carouselCards = ref([
   { id: 1, image: 'https://tabarrukziyorat.uz/media/destination_images/Axtam_Sahoba_Adhamsahoba.jpg', title: 'Ahtansob', subtitle: 'Toshkent region, Uzbekistan', visible: false },
   { id: 2, image: 'https://tabarrukziyorat.uz/media/destination_images/IMG_6383.jpg', title: 'Abiwerd Peshtak', subtitle: 'Mary province, Turkmenistan', visible: false },
   { id: 3, image: 'https://tabarrukziyorat.uz/media/destination_images/Рисунок3_W24FO57.jpg', title: 'Amir Ahmad Bukhari Mosque', subtitle: 'Istanbul, Turkey', visible: false },
@@ -60,7 +85,7 @@ const cards = ref([
 ]);
 
 
-const loopedCards = ref([...cards.value, ...cards.value]);
+const loopedCards = ref([...carouselCards.value, ...carouselCards.value]);
 
 const paused = ref(false);
 
@@ -214,4 +239,5 @@ const paused = ref(false);
     font-size: 42px;
   }
 }
+
 </style>
