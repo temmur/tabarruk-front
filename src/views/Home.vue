@@ -1,10 +1,11 @@
 <template>
   <div class="overflow-hidden">
     <CBanner/>
-    <CHomeCarousel/>
-    <div class="flex text-white items-center mt-4">
+    <DestinationsCards/>
+    <div class="-mt-5">
+      <CAbout/>
     </div>
-    <div class="mt-10">
+    <div class="mt-20">
       <TravelStats/>
     <CountriesCard :countries = "countries"/>
       <NewsCards :cards="cards"/>
@@ -22,13 +23,9 @@ import CBanner from "@/components/CBanner.vue";
 import TravelStats from "@/cards/TravelStats.vue";
 import CountriesCard from '@/components/Sections/CountriesCard.vue'
 import NewsCards from "@/cards/newsCards.vue";
-import DestinationCards from "@/cards/destinationCards.vue";
-
-import CAbout from '@/components/Sections/CAbout.vue';
 import InstagramCard from "@/components/InstagramCard.vue";
 import Particles from "@/components/PartnerCarusel.vue";
-
-
+import CAbout from "@/components/Sections/CAbout.vue"
 const institutions = [
   {
     id: 1,

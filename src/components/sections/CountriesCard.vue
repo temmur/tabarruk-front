@@ -1,7 +1,5 @@
 <template>
   <section class="w-full py-12  flex flex-col items-center">
-
-
     <!-- Title -->
     <h2 class="text-4xl text-white font-semibold text-center mb-2 font-serif  underline underline-offset-[13px] decoration-red-500 decoration-2 capitalize">how many countries?</h2>
     <!-- Subtitle -->

@@ -10,7 +10,6 @@
     <div class="container mx-auto flex items-center justify-between p-4">
       <!-- Logo -->
       <CLogo />
-
       <!-- Right side -->
       <div class="hidden md:flex items-center gap-5 text-white cursor-pointer hover:text-gray-800 relative">
         <!-- Navbar links -->
@@ -23,14 +22,14 @@
         <CSearchInput/>
       </div>
       <FontAwesomeIcon
-          :icon="isOpen ? 'xmark' : 'bars'"
+          :icon="isOpen ? ['fas','xmark'] : [ 'fas','bars']"
           @click="isOpen = !isOpen"
-          class="text-white w-13 h-13 cursor-pointer hidden lg:flex"
+          class="text-white w-10 h-10 cursor-pointer lg:hidden"
       />
     </div>
     <div v-if="isOpen"
     class="lg:hidden bg-gray-900 text-white p-4"
-    >
+    >lg
       <CNavbar class="md:flex"/>
       <!-- Divider -->
       <span class="border-l border-gray-300 h-8"></span>

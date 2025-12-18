@@ -16,7 +16,7 @@
         <div
             v-for="(item, index) in images"
             :key="index"
-            class="shrink-0 transition-all duration-300"
+            class='shrink-0 transition-all duration-300'
             :style="{
             width: hovered === index
               ? expandedWidth + 'px'
@@ -26,7 +26,9 @@
           <img
               :src="item.src"
               :alt="item.alt"
-              class="w-full h-[320px] object-cover rounded-2xl shadow-lg transition-all duration-300"
+              :class="[
+                  'images',
+                  'w-full h-[320px] object-cover rounded-2xl shadow-lg transition-all duration-300']"
               @mouseenter="hovered = index"
               @mouseleave="hovered = null"
               draggable="false"
@@ -89,5 +91,8 @@ button:disabled {
 img {
   will-change: transform;
   user-select: none;
+}
+.images{
+  width: clamp(160%,140%,100%);
 }
 </style>

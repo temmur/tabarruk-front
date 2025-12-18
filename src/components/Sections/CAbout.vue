@@ -7,15 +7,20 @@
           Biz haqimizda
         </h2>
 
-        <p class="text-lg leading-relaxed text-gray-300">
+        <p :class="[
+            'subtitle',
+'text-lg leading-relaxed text-gray-300'
+]">
           Maqolalar, fotosuratlar va videolar tanlovi orqali turkiy mamlakatlarning
           qimmatli, tarixiy va merosi joylarini o‘rganing...
         </p>
 
         <div class="supporter-container mt-8">
           <div class="supporter-item " v-for="(item, i) in supporters" :key="i" >
-            <div class="group relative flex items-center">
-  <img :src="item.img" alt="logo" class="object-cover" />
+            <div class="group relative flex items-center gap-3 w-[150px]">
+
+              <img :src="item.img" alt="logo" class='object-cover'
+/>
 
   <div 
     class="
@@ -28,7 +33,7 @@
       duration-300 
        items-center justify-center 
       text-white text-sm font-semibold
-      max-w-[400px] 
+      max-w-[400px]
     "
   >
     {{ item.text }}
@@ -88,5 +93,7 @@ const supporters = [
   transition: opacity 0.35s ease;
 
 }
- 
+.subtitle{
+  font-size:clamp(10px,13px,18px);
+}
 </style>

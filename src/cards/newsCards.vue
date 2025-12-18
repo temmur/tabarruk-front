@@ -1,5 +1,5 @@
 <template>
-  <section class="w-full px-6 py-12 container">
+  <section class="w-full px-6 py-12 container ">
     <div class="text-center mb-9">
       <h3 class="font-serif text-white mb-3 text-3xl font-bold font-italic underline underline-offset-[8px] decoration-red-500">News</h3>
       <p class="font-medium mr-5 text-white">Latest news about Turkic countries</p>
@@ -16,7 +16,10 @@
         </div>
       </div>
 
-      <div class="md:col-span-2 flex flex-col cursor-pointer gap-3">
+      <div class="md:col-span-2 flex flex-col cursor-pointer gap-3
+bg-[url('/images/bg-vector.svg')]
+ bg-right-top bg-default
+">
         <div
             v-for="(card,idx) in props.cards.slice(1)"
             :key="idx"
