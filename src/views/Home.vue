@@ -17,7 +17,6 @@
 
 <script setup lang="ts">
 import { ref, onMounted,onBeforeUnmount } from 'vue';
-import CHomeCarousel from '@/cards/CHomeCarousel.vue';
 import { cards, countries, carouselCards } from '@/data/DCardsData.js';
 import CBanner from "@/components/CBanner.vue";
 import TravelStats from "@/cards/TravelStats.vue";

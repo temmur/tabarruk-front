@@ -94,5 +94,6 @@ img {
 }
 .images{
   width: clamp(160%,140%,100%);
+  height:clamp(400px,420px,320px);
 }
 </style>
