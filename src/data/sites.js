@@ -1,3 +1,5 @@
+import {ref} from "vue";
+
 export const historicalSites = [
     {
         name_en: "Ancient Fortress",
@@ -25,3 +27,24 @@ export const historicalSites = [
     },
     // Add more here
 ]
+    export const religionData =[
+    {
+        img:'https://tabarrukziyorat.uz/media/religion_flags/MSI.png',
+        religion:'Islam',
+        destinations_en:'6 Destinations',
+        destinations_ru:'6 Адресса',
+        destinations_uz:'6 Ьanzillar',
+    },
+]
+
+export const listItem =[
+    {
+        img:'https://tabarrukziyorat.uz/media/religion_flags/MSI.png',
+        title:'Islam',
+        destinations:'6 destinations'
+    },
+    {
+
+    }
+]
+

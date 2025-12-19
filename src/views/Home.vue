@@ -2,22 +2,25 @@
   <div class="overflow-hidden">
     <CBanner/>
     <CHomeCarousel/>
-          <CAbout/>
+    <div class="flex text-white items-center mt-4">
+    </div>
+    <div class="mt-10">
       <TravelStats/>
     <CountriesCard :countries = "countries"/>
-      <New+sCards :cards="cards"/>
+      <NewsCards :cards="cards"/>
       <InstagramCard/>
     </div>
   <Particles :items="institutions" :repeat-count="999" />
+  </div>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted,onBeforeUnmount } from 'vue';
-import CButtons from "@/components/CButtons.vue";
 import CHomeCarousel from '@/cards/CHomeCarousel.vue';
+import { cards, countries, carouselCards } from '@/data/DCardsData.js';
 import CBanner from "@/components/CBanner.vue";
 import TravelStats from "@/cards/TravelStats.vue";
-import CountriesCard from '../components/sections/CountriesCard.vue'
+import CountriesCard from '@/components/Sections/CountriesCard.vue'
 import NewsCards from "@/cards/newsCards.vue";
 import DestinationCards from "@/cards/destinationCards.vue";
 
@@ -90,6 +93,7 @@ const loopedCards = ref([...carouselCards.value, ...carouselCards.value]);
 const paused = ref(false);
 
 
+import DestinationsCards from '@/cards/DestinationCards.vue'
 </script>
 
 
@@ -239,5 +243,4 @@ const paused = ref(false);
     font-size: 42px;
   }
 }
-
 </style>

@@ -1,5 +1,7 @@
 <template>
-  <section class="w-full py-12 flex flex-col items-center">
+  <section class="w-full py-12  flex flex-col items-center">
+
+
     <!-- Title -->
     <h2 class="text-4xl text-white font-semibold text-center mb-2 font-serif  underline underline-offset-[13px] decoration-red-500 decoration-2 capitalize">how many countries?</h2>
     <!-- Subtitle -->
@@ -17,6 +19,7 @@
          before:content-[''] before:absolute before:left-1/2 before:-translate-x-1/2
           before:bottom-0 before:h-[2px] before:bg-gray-400 before:w-7 hover:before:w-75 overflow-hidden
  before:transition-all before:duration-300"
+
       >
        <img
             :src="country.image"
@@ -31,7 +34,6 @@
 </template>
 
 <script setup lang="ts">
-import {defineProps} from 'vue'
 interface Country{
   name:string,
   image: string,
@@ -39,5 +41,5 @@ interface Country{
 }
 const props = defineProps<{
   countries:Country[]
-}>( )
+}>()
 </script>
