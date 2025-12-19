@@ -12,22 +12,30 @@
       <CLogo />
 
       <!-- Right side -->
-      <div class="hidden md:flex items-center gap-5 text-gray-800 relative">
+      <div class="hidden md:flex items-center gap-5 text-white cursor-pointer hover:text-gray-800 relative">
         <!-- Navbar links -->
-        <CNavbar />
-
+        <CNavbar class="md:flex"/>
         <!-- Divider -->
         <span class="border-l border-gray-300 h-8"></span>
 <CLanguageSwitcher/>
         <span class="border-l border-gray-300 h-8"></span>
-
         <!-- Search input -->
-        <CSearchInput class=""/>
-
+        <CSearchInput/>
       </div>
-
+      <FontAwesomeIcon
+          :icon="isOpen ? 'xmark' : 'bars'"
+          @click="isOpen = !isOpen"
+          class="text-white w-13 h-13 cursor-pointer hidden lg:flex"
+      />
     </div>
-
+    <div v-if="isOpen"
+    class="lg:hidden bg-gray-900 text-white p-4"
+    >
+      <CNavbar class="md:flex"/>
+      <!-- Divider -->
+      <span class="border-l border-gray-300 h-8"></span>
+      <CLanguageSwitcher/>
+    </div>
     <NavbarSkeleton v-if="loading"/>
 
   </header>
@@ -43,7 +51,9 @@ import CLanguageSwitcher from "@/Common/CLanguageSwitcher.vue";
 import NavbarSkeleton from "@/Skeleton/NavbarSkeleton.vue";
 // Language data
 import { langOptions } from '@/langs.js';
+import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 
+const isOpen = ref(false)
 const toggle = ref(false)
 
 const isScrolled = ref(false);

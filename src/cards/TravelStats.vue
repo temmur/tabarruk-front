@@ -4,7 +4,7 @@
       <div
           v-for="(card, index) in cards"
           :key="index"
-          class=" relative bg-gray-400 border  hover:bg-gray-600 transition-transform duration-300 hover:scale-95  border-gray-500/40 backdrop-blur-sm rounded-lg p-4 flex items-center w-[300px] h-[100px] mr-4"
+          class=" relative bg-gray-900 border-gray-950/40 backdrop-blur-md rounded-lg p-4 flex items-center w-[300px] h-[100px] mr-4"
       >
         <!-- Text section -->
         <div class="flex-1 flex flex-col justify-center">

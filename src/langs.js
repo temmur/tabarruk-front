@@ -1,5 +1,11 @@
 export const langOptions = [
-    { code: 'en', name: 'English', flag: 'https://avatars.mds.yandex.net/i?id=ac004abd9c44455279796e09eddb2a204e76ec6d-16339837-images-thumbs&n=13' },
-    { code: 'ru', name: 'Русский', flag: 'https://avatars.mds.yandex.net/i?id=59d367e1678fc2a5e29a852af14ba52568043196-5161294-images-thumbs&n=13' },
-    { code: 'uz', name: 'Oʻzbekcha', flag: 'https://avatars.mds.yandex.net/i?id=c6550525b3080bd7c04fc7ba5b51b82077c82b15-9203655-images-thumbs&n=13' },
+    { code: 'en', name: 'English', flag: '/src/assets/logos/GreatBritain.webp' },
+    { code: 'ru', name: 'Русский', flag: '/src/assets/logos/Russia.webp' },
+    { code: 'uz', name: 'Oʻzbekcha', flag: '/src/assets/logos/Uzbekistan.webp' },
+    { code: 'kz', name: 'Қазақша', flag: '/src/assets/logos/kazakhstan-logo.webp'},
+    { code: 'kg', name: 'Кыргызча', flag: '/src/assets/logos/Kyrgyzstan.svg' },
+    { code: 'tr', name: 'Türkçe', flag: '/src/assets/logos/turkey.webp' },
+    { code: 'tm', name: 'Türkmençe', flag:'/src/assets/logos/turkmenistan.webp' },
+    { code: 'az', name: 'Azərbaycanca', flag: '/src/assets/logos/azerbaijan.webp' },
+    { code: 'hu', name: 'Magyar', flag: '/src/assets/logos/Hungary.webp' },
 ];

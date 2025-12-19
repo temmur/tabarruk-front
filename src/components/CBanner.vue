@@ -8,13 +8,15 @@
     </div>
     <div class="imgs absolute inset-0 bg-black/40"></div>
 
-    <div class="absolute">
+    <div class="hero-overlay">
         <img src="/public/Vector (6).svg">
     </div>
 
     <div class="hero-inner">
       <div class="hero-text">
-        <p class="hero-location">
+        <p class="hero-location"
+           :class="slides[currentIndex].icon"
+        >
           {{ slides[currentIndex].location }}
         </p>
 
@@ -51,6 +53,7 @@ import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 const slides = ref([
   {
     image: '/images/1.jpg',
+    icon:'ri-map-pin-line',
     location: "Samarqand viloyati, O'zbekiston",
     title: 'Registon',
     description:
@@ -58,6 +61,7 @@ const slides = ref([
   },
   {
     image: '/images/2.jpg',
+    icon:'ri-map-pin-line',
     location: "Turkiston Shahri viloyati",
     title: "O'trar Shahri",
     description:
@@ -65,6 +69,7 @@ const slides = ref([
   },
   {
     image: '/images/3.jpg',
+    icon:'ri-map-pin-line',
     location: "Sulton Uvays Qaroniy masjidi",
     title: 'Ichan qal’a',
     description:
@@ -121,16 +126,16 @@ onBeforeUnmount(stopSlider)
 .hero-overlay {
   position: absolute;
   z-index: 100;
-
+  inset: 0;
   background: linear-gradient(
-  to center,
+      to right,
       rgba(0, 0, 0, 0.2),
       rgba(0, 0, 0, 0.2),
       rgba(0, 0, 0, 0.2)
   );
 }
 .hero-overlay img{
-  z-index: -10;
+  z-index: 10;
 }
 .hero-inner {
   position: relative;

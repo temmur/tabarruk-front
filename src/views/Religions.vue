@@ -1,3 +1,5 @@
 <template>
- <p class="text-white"> religions vue</p>
+  <div>
+    <h3>Religions vue</h3>
+  </div>
 </template>
