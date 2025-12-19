@@ -92,8 +92,12 @@ img {
   will-change: transform;
   user-select: none;
 }
+
+@media(max-width: 315px){
 .images{
-  width: clamp(160%,140%,100%);
-  height:clamp(400px,420px,320px);
+  height:70vh;
+  width:10vh;
 }
+}
+
 </style>

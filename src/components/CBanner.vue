@@ -73,7 +73,7 @@ const slides = ref([
     location: "Sulton Uvays Qaroniy masjidi",
     title: 'Ichan qal’a',
     description:
-        "Uvaysga Payg‘ambarimiz (s.a.v)ning Uhud jangida tishlarini dushmanlar sindirgani ayon bo‘lgach, juda afsuslanib, Rasuli akram haqlariga duo qilib, Allohdan u zotning&nbsp; umrlarini ziyoda qilishini tilaydi"
+        "Uvaysga Payg‘ambarimiz (s.a.v)ning Uhud jangida tishlarini dushmanlar sindirgani ayon bo‘lgach, juda afsuslanib, Rasuli akram haqlariga duo qilib, Allohdan u zotning umrlarini ziyoda qilishini tilaydi"
   }
 ])
 
