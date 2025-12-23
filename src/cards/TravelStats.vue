@@ -1,6 +1,6 @@
 <template>
   <div class="w-full overflow-hidden cursor-pointer relative container ">
-    <div class="flex justify-between">
+    <div class="flex flex-col md:flex-row gap-[25px] ml-[7px] justify-between">
       <div
           v-for="(card, index) in cards"
           :key="index"

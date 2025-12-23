@@ -1,12 +1,12 @@
 <template>
 <div class="relative inline-block"
-@click = "open = !open"
+@click="emit('toggle')"
 >
   <div class="cursor-pointer inline-flex items-center">
     <slot name="trigger"></slot>
   </div>
 <div
-    v-if="open"
+    v-if="isOpen"
     class="absolute -left-30 top-8! bg-gray-800/40 backdrop-blur-5xl shadow-md rounded-lg "
 >
   <div class="flex flex-wrap mb-3 ">
@@ -28,8 +28,12 @@ defineProps({
   items:{
     type: Array,
     default :() =>[]
+  },
+  isOpen:{
+    type: Boolean,
+    required: true
   }
 });
 
-const open = ref(false)
+const emit = defineEmits(['toggle'])
 </script>

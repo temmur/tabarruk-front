@@ -1,8 +1,11 @@
 <template>
-  <nav class="hidden md:flex space-x-4 mt-1 mb-2 text-white font-bold text-sm">
+  <nav class="flex flex-col md:flex-row space-y-4 soace-x-6 mr-30 md:space-x-4 mt-1 mb-2 text-white font-bold text-xl md:text-sm">
   <router-link to="/about" class="text-white hover:text-gray-400">{{ $t('about') }}</router-link>
-    <CDropdown :items="countryList" class="">
-      <div></div>
+    <CDropdown
+        :items="countryList"
+               :isOpen="activeDropdown === 'countries'"
+            @toggle="toggle('countries')"
+    >
      <template #trigger>
        <p class="text-white hover:text-gray-400">{{$t('countries')}}</p>
      </template>
@@ -18,9 +21,13 @@
     </CDropdown>
 
   <router-link to="/map" class="text-white hover:text-gray-400">{{ $t('heritageMap') }}</router-link>
-<CDropdown :items="listItem">
+<CDropdown
+    :items="listItem"
+    :isOpen="activeDropdown === 'religions'"
+    @toggle="toggle('religions')"
+>
   <template #trigger>
-  <p class="text-white hover:text-gray-400">{{$t('religions')}}</p>
+  <p class="text-white  hover:text-gray-400">{{$t('religions')}}</p>
   </template>
   <template #item ="{item}">
 <div class="flex items-center w-40 h-6 -mb-3">
@@ -34,11 +41,18 @@
 </CDropdown>
   <router-link to="/help" class="text-white hover:text-gray-400">{{ $t('help') }}</router-link>
   </nav>
-  <router-link to="/Faq" class="hidden md:flex space-x-4 mt-1 mb-2 text-white hover:text-gray-400 font-thin text-[14px]">{{$t('FAQ')}}</router-link>
+  <router-link to="/Faq" class="hidden md:block space-x-4 mt-1 mb-2 text-white hover:text-gray-400 font-thin text-[14px]">{{$t('FAQ')}}</router-link>
 </template>
 <script setup lang="ts">
 import CDropdown from '@/Common/CDropdown.vue'
 import {ref} from 'vue'
+
+const activeDropdown = ref<string | null>(null)
+function toggle(name){
+  activeDropdown.value =
+      activeDropdown.value === name ? null : name
+}
+
 const listItem =ref([
   {
     img:'/src/assets/logos/religions.png',

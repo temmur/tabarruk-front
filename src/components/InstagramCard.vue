@@ -1,15 +1,13 @@
 <template>
   <div class="hero">
     <div class="hero-text">
-        <h1>Instagram</h1>
+        <h1 class="text-[5px]">Instagram</h1>
         <div class="hd"></div>
-        <p>Turk dunyosidagi so‘nggi yangiliklar va o‘zgarishlardan xabardor bo‘ling.</p>
+        <p class="text-[10px]">Turk dunyosidagi so‘nggi yangiliklar va o‘zgarishlardan xabardor bo‘ling.</p>
       </div>
     </div>
 
     <div class="card-all">
-
-
       <div class="container">
         <div class="cards-grid">
           <div v-for="(card, index) in cards" :key="index" class="card">
@@ -22,14 +20,10 @@
           </div>
         </div>
       </div>
-
   </div>
-
-
 </template>
 
 <script>
-
 export default {
   data() {
     return {
@@ -77,8 +71,6 @@ export default {
 </script>
 
 <style scoped>
-
-
 .cards-grid {
   display: flex;
   justify-content: center;
@@ -114,11 +106,11 @@ export default {
 }
 
 .hero-text h1{
-  font-size: 50px;
+  font-size: clamp(20px,30px,50px);
 }
 
 .hero-text p {
-  font-size: 20px;
+  font-size: clamp(10px,15px,20px);
 }
 
 .hd {
@@ -130,7 +122,6 @@ export default {
   width: 220px;
   margin: 0 auto;
 }
-
 .card {
   background-color: rgb(255 255 255 / 0.05);
   border-radius: 10px;
@@ -197,5 +188,6 @@ p {
   margin-bottom: 70px;
 }
 </style>
+
 <script setup lang="ts">
 </script>

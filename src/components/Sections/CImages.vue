@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-full">
+  <div class=" container relative w-full">
     <button
         @click="prev"
         class="absolute left-2 top-1/2 -translate-y-1/2 z-30 bg-white/10 hover:bg-white/20 text-white p-2 rounded-full backdrop-blur-md transition"
@@ -10,15 +10,15 @@
 
     <div class="overflow-hidden w-full px-4">
       <div
-          class="flex gap-4 transition-transform duration-500 will-change-transform"
+          class="flex gap-4 transition-transform will-change-transform"
           :style="{ transform: `translateX(-${currentIndex * step}px)` }"
       >
         <div
             v-for="(item, index) in images"
             :key="index"
-            class='shrink-0 transition-all duration-300'
+            class='shrink-0 transition-all'
             :style="{
-            width: hovered === index
+            width: activeIndex === index
               ? expandedWidth + 'px'
               : compressedWidth + 'px'
           }"
@@ -28,9 +28,9 @@
               :alt="item.alt"
               :class="[
                   'images',
-                  'w-full h-[320px] object-cover rounded-2xl shadow-lg transition-all duration-300']"
-              @mouseenter="hovered = index"
-              @mouseleave="hovered = null"
+                  'w-full h-[320px] object-cover rounded-2xl shadow-lg transition-all']"
+              @mouseenter="!isMobile && (hovered = index)"
+              @mouseleave="!isMobile && (hovered = null)"
               draggable="false"
           />
         </div>
@@ -66,7 +66,7 @@ const images = [
   { src: "https://tabarrukziyorat.uz/media/about_images/d86b7d8d59d523b20842a2f1f9722f66.jpg", alt: "7" },
 ];
 
-const hovered = ref(null);
+const hovered = ref(0);
 const currentIndex = ref(0);
 
 const visibleCount = 4;
@@ -74,6 +74,13 @@ const visibleCount = 4;
 const maxIndex = computed(() => {
   return Math.max(0, images.length - visibleCount);
 });
+
+const isMobile = window.matchMedia("(max-width:315px)").matches;
+
+const activeIndex = computed (()=>{
+  return isMobile ? 0 : hovered.value;
+});
+
 
 function next() {
   if (currentIndex.value < maxIndex.value) currentIndex.value++;
