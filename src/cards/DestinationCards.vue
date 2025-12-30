@@ -9,11 +9,21 @@
       <div
           v-for="(card, index) in loopedCards"
           :key="index"
-          class="flex-none -mt-20 rounded-lg p-2 flex items-center border border-white hover:scale-105 w-[400px] h-[100px] mr-4">
+      :class="[
+          'card',
+            'flex-none -mt-20 rounded-lg p-2 flex items-center border border-white hover:scale-105 w-[400px] h-[100px] mr-4'
+      ]"
+      >
         <img :src="card.image" :alt="card.title" class="w-20 h-20  rounded-lg" />
         <div class="ml-5 flex flex-col justify-center gap-2">
-          <p class="text-[10px] text-gray-600 font-medium leading-tight">{{ card.subtitle }}</p>
-          <p class="text-2xl text-white font-semibold mt-1 leading-tight">{{ card.title }}</p>
+          <p class="text-[10px] text-gray-600 font-medium leading-tight"
+          >{{ card.subtitle }}</p>
+          <p
+              :class="[
+                  'title',
+      'text-2xl text-white font-semibold mt-1 leading-tight'
+              ]"
+>{{ card.title }}</p>
         </div>
       </div>
     </div>
@@ -57,6 +67,13 @@ const paused = ref(false);
 .pause-animation {
   animation-play-state: paused;
 }
-
-
+.card{
+  width: clamp(200px, 30vw, 400px);
+min-height:clamp(80px, 12vw, 100px);
+  padding:clamp(8px,2vw,12px);
+  border-radius:clamp(8px,1.2vw,12px);
+}
+.title{
+  font-size:clamp(10px,15px,24px);
+}
 </style>

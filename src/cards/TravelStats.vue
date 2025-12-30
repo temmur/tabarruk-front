@@ -1,10 +1,10 @@
 <template>
   <div class="w-full overflow-hidden cursor-pointer relative container ">
-    <div class="flex justify-between">
+    <div class="flex flex-col md:flex-row gap-[25px] ml-[7px] justify-between">
       <div
           v-for="(card, index) in cards"
           :key="index"
-          class=" relative bg-gray-900 border-gray-950/40 backdrop-blur-md rounded-lg p-4 flex items-center w-[300px] h-[100px] mr-4"
+          class=" relative bg-gray-800 border-gray-950/40 backdrop-blur-md rounded-lg p-4 flex items-center w-[300px] h-[100px] mr-4"
       >
         <!-- Text section -->
         <div class="flex-1 flex flex-col justify-center">
@@ -24,7 +24,6 @@
       </div>
     </div>
   </div>
-
 </template>
 
 <script setup lang="ts">

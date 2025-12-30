@@ -1,11 +1,15 @@
 <template>
-  <section class="w-full py-12  flex flex-col items-center">
-
-
+  <section class="w-full py-12 flex flex-col items-center">
     <!-- Title -->
-    <h2 class="text-4xl text-white font-semibold text-center mb-2 font-serif  underline underline-offset-[13px] decoration-red-500 decoration-2 capitalize">how many countries?</h2>
+    <h2 :class="[
+    'title',
+    'text-lg md:text-4xl text-white font-semibold text-center mb-2 font-serif underline underline-offset-[13px] decoration-red-500 decoration-2 capitalize'
+    ]">how many countries?</h2>
     <!-- Subtitle -->
-    <p class="text-center text-white mb-8">All countries that we represent</p>
+    <p :class="[
+        'subtitle',
+        'text-center text-sm md:text-lg text-white mb-8'
+    ]">All countries that we represent</p>
 
     <!-- Countries grid -->
     <div class="container flex flex-wrap justify-center gap-4 text-center">
@@ -24,7 +28,10 @@
        <img
             :src="country.image"
             :alt="country.name"
-            class="w-24 h-24 rounded-full  backdrop-blur-md border-gray-600 border-4 object-cover mb-2 flex mx-auto"
+            :class="[
+                'image',
+                'w-13 md:w-20 h-13 md:h-20 rounded-full  backdrop-blur-md border-gray-600 border-4 object-cover mb-2 flex mx-auto'
+            ]"
         />
         <span class="text-lg font-medium text-white">{{ country.name }}</span>
         <span class="text-[14px] font-medium text-gray-500">{{country.desc}}</span>
@@ -43,3 +50,8 @@ const props = defineProps<{
   countries:Country[]
 }>()
 </script>
+
+<style>
+
+
+</style>

@@ -73,7 +73,7 @@ const slides = ref([
     location: "Sulton Uvays Qaroniy masjidi",
     title: 'Ichan qal’a',
     description:
-        "Uvaysga Payg‘ambarimiz (s.a.v)ning Uhud jangida tishlarini dushmanlar sindirgani ayon bo‘lgach, juda afsuslanib, Rasuli akram haqlariga duo qilib, Allohdan u zotning&nbsp; umrlarini ziyoda qilishini tilaydi"
+        "Uvaysga Payg‘ambarimiz (s.a.v)ning Uhud jangida tishlarini dushmanlar sindirgani ayon bo‘lgach, juda afsuslanib, Rasuli akram haqlariga duo qilib, Allohdan u zotning umrlarini ziyoda qilishini tilaydi"
   }
 ])
 
@@ -157,20 +157,20 @@ onBeforeUnmount(stopSlider)
 }
 
 .hero-location {
-  font-size: 24px;
+  font-size: clamp(15px, 1.6vw,24px);
   margin-bottom:6px;
   opacity: 0.9;
   margin: 0 auto;
 }
 
 .hero-title {
-  font-size: 94px;
-  font-weight: 700;
+  font-size: clamp(24px,8vw,94px);
+  font-weight: clamp(400,600,700);
   margin-bottom: 24px;
 }
 
 .hero-desc {
-  font-size: 25px;
+  font-size: clamp(10px, 2.2vw,25px);
   line-height: 1.6;
   margin-bottom: 32px;
 }
@@ -179,9 +179,9 @@ onBeforeUnmount(stopSlider)
   background: #ff4b5c;
   color: #fff;
   border: none;
-  padding: 14px 32px;
+  padding: clamp(10px,1.5vw,14px) clamp(20px,3vw,32px);
   border-radius: 999px;
-  font-size: 16px;
+  font-size: clamp(20px,1.4vw,16px);
   cursor: pointer;
   transition: background 0.2s ease;
 }
@@ -216,22 +216,5 @@ onBeforeUnmount(stopSlider)
   background-color: rgba(255, 255, 255, 0.7);
 }
 
-@media (max-width: 768px) {
-  .hero-inner {
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-  }
 
-  .hero-counter {
-    position: absolute;
-    right: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  .hero-title {
-    font-size: 42px;
-  }
-}
 </style>

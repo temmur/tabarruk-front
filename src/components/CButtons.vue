@@ -1,7 +1,7 @@
 <template>
   <button
       :class="[
-      'relative inline-flex cursor-pointer items-center justify-center rounded-lg transition-transform duration-300 hover:scale-105 active:scale-95 font-semibold',
+      'relative inline-flex cursor-pointer items-center justify-center rounded-lg duration-500 hover:scale-105 active:scale-95 font-semibold',
       variantClasses,
       buttonClass
     ]"

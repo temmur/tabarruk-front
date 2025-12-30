@@ -3,11 +3,11 @@
   <div class="relative bg-[url('/images/New_uzbekistan.jpg')] bg-cover bg-center h-screen bg-no-repeat">
     <div class="absolute inset-0 bg-gray-900/70"></div>
 
-      <img src="/images/Vector%20(6).svg" alt=""
+      <img src="/images/Vector%20(6).svg" alt="bg-img"
            class="absolute"
       >
       <div class="relative z-10 text-white p-10 flex flex-col justify-center items-center h-full">
-        <h1 class="text-8xl font-bold">Uzbeksitan</h1>
+        <h1 class="xt-2xl md:text-8xl font-bold">Uzbeksitan</h1>
 
         <p class="text-xl mt-4 font-normal">Uzbekistan (officially: Republic of Uzbekistan) is a country located in the central part of Central Asia.</p>
         <CButtons variant="red" text="Watch video" button-class="mt-4 cursor-pointer">
