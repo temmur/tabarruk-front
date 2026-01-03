@@ -46,12 +46,22 @@
 
 
 <template>
+<<<<<<< HEAD
   <section class="w-full py-12  flex flex-col items-center">
 
+=======
+  <section class="w-full py-12 flex flex-col items-center">
+>>>>>>> febcedae01b37b57ee8d1f4f535fc05fedf048be
     <!-- Title -->
-    <h2 class="text-4xl text-white font-semibold text-center mb-2 font-serif  underline underline-offset-[13px] decoration-red-500 decoration-2 capitalize">how many countries?</h2>
+    <h2 :class="[
+    'title',
+    'text-lg md:text-4xl text-white font-semibold text-center mb-2 font-serif underline underline-offset-[13px] decoration-red-500 decoration-2 capitalize'
+    ]">how many countries?</h2>
     <!-- Subtitle -->
-    <p class="text-center text-white mb-8">All countries that we represent</p>
+    <p :class="[
+        'subtitle',
+        'text-center text-sm md:text-lg text-white mb-8'
+    ]">All countries that we represent</p>
 
     <!-- Countries grid -->
     <div class="container flex flex-wrap justify-center gap-4 text-center">
@@ -69,6 +79,7 @@
           before:bottom-0 before:h-[2px] before:bg-gray-400 before:w-7 hover:before:w-75 overflow-hidden
  before:transition-all before:duration-300"
 
+<<<<<<< HEAD
         >
           <img
               :src="country.flag"
@@ -80,6 +91,20 @@
 
         </div>
       </router-link>
+=======
+      >
+       <img
+            :src="country.image"
+            :alt="country.name"
+            :class="[
+                'image',
+                'w-13 md:w-20 h-13 md:h-20 rounded-full  backdrop-blur-md border-gray-600 border-4 object-cover mb-2 flex mx-auto'
+            ]"
+        />
+        <span class="text-lg font-medium text-white">{{ country.name }}</span>
+        <span class="text-[14px] font-medium text-gray-500">{{country.desc}}</span>
+      </div>
+>>>>>>> febcedae01b37b57ee8d1f4f535fc05fedf048be
     </div>
   </section>
 </template>
@@ -93,4 +118,13 @@ interface Country{
 const props = defineProps<{
   countries:[]
 }>()
+<<<<<<< HEAD
 </script>
+=======
+</script>
+
+<style>
+
+
+</style>
+>>>>>>> febcedae01b37b57ee8d1f4f535fc05fedf048be

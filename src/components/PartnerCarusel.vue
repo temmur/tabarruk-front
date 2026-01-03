@@ -102,7 +102,7 @@ const isBottomPaused = ref(false)
 }
 
 .hero-text p {
-  font-size: 20px;
+  font-size: clamp(8px,15px,20px);
 }
 
 .hd {

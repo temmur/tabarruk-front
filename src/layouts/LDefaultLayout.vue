@@ -9,6 +9,6 @@
 </template>
 
 <script setup>
-import CHeader from '@/Common/CHeader.vue'
+import CHeader from '@/Common/Header/CHeader.vue'
 import CFooter from '@/Common/CFooter.vue'
 </script>

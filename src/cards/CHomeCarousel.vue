@@ -8,13 +8,16 @@
         <div
             v-for="(card, index) in loopedCards"
             :key="index"
-            class="flex-none backdrop-blur-xl bg-gray-500/40 border border-gray-500 rounded-lg shadow-lg p-2 flex items-center w-[400px] h-[100px] mr-4
-               transform transition-transform duration-500 hover:scale-105 hover:shadow-2xl"
+            :class="[
+                'card',
+                'flex-none backdrop-blur-xl bg-gray-500/40 border border-gray-500 hover:border-white rounded-lg shadow-lg p-2 flex items-center w-[400px] h-[100px] mr-4\n'+
+'               transform transition-transform duration-500 hover:shadow-2xl'
+            ]"
         >
           <img :src="card.image" alt="Destination" class="w-20 h-20 object-cover rounded-lg" />
-          <div class="ml-5 flex flex-col justify-center gap-2">
+          <div class="ml-5 flex flex-col justify-center md:gap-2">
             <p class="text-[10px] text-gray-300 font-medium leading-tight">{{ card.subtitle }}</p>
-            <p class="text-2xl text-white font-semibold mt-1 leading-tight">{{ card.title }}</p>
+            <p class="text-[15px] text-white font-semibold leading-tight">{{ card.title }}</p>
           </div>
         </div>
       </div>
@@ -41,3 +44,12 @@ const loopedCards = ref([...carouselCards.value, ...carouselCards.value]);
 
 const paused = ref(false);
 </script>
+
+<style>
+.card{
+  width: clamp(200px, 30vw, 400px);
+  min-height:clamp(80px, 12vw, 100px);
+  padding:clamp(8px,2vw,12px);
+  border-radius:clamp(8px,1.2vw,12px);
+}
+</style>
