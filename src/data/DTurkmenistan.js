@@ -3,7 +3,8 @@ export const turkmenistan ={
     id:3,
     title:'Turkmenistan',
     subtitle:'Turkmenistan (Turkmen: Туркемнистан), Republic of Turkmenistan (Turkmen: Туркеминск Respublikasya) is a sovereign state in Central Asia, bordering Kazakhstan to the northwest, Uzbekistan to the north and east, Afghanistan to the southeast, Iran to the south, and the Caspian Sea to the southwest and west.',
-    image:'https://tabarrukziyorat.uz/_nuxt/pattern/main.svg',
+    image:'https://admin.tabarrukziyorat.uz/media/country_images/Turkman.jpg',
+    flag:'https://tabarrukziyorat.uz/media/country_flags/Turkmenistan.svg',
     infoCards :[
         {
             id:1,

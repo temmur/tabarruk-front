@@ -6,7 +6,7 @@ export const uzbekistan = {
     title: 'Uzbekistan',
     subtitle: 'Uzbekistan (officially: Republic of Uzbekistan) is located in Central Asia.',
     image: 'https://tabarrukziyorat.uz/media/country_images/shutterstock_2304168971_2.jpg',
-
+    flag: 'https://tabarrukziyorat.uz/media/country_flags/Uzbekistan.svg',
     infoCards: [
         { id: 1, icon: 'ri-mosque-line', statistics: '175', text: 'Attractions' },
         { id: 2, icon: 'ri-population-line', statistics: '37', text: 'Population' }

@@ -4,7 +4,8 @@ export const hungary ={
     id:7,
     title:'Hungary',
     subtitle:'Hungary or Hungary (Magyarorszag) (officially: the Republic of Hungary or the Republic of Hungary) (Magyar Koztar-sasag) is a country located in the central part of Europe, in the middle reaches of the Danube River. The area is 93 thousand km.',
-image:'https://avatars.mds.yandex.net/i?id=b399aa4c695d1bcac81938e8681c01ec30027a2e-10376972-images-thumbs&n=13',
+image:'https://admin.tabarrukziyorat.uz/media/country_images/Hungary.jpg',
+    flag:'https://tabarrukziyorat.uz/media/country_flags/Hungary.svg',
     infoCards:[
         {
             id:'1',

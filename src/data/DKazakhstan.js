@@ -4,7 +4,8 @@ export const kazakhstan ={
     id:5,
     title:'Kazakhstan',
     subtitle:'Kazakhstan or the Republic of Kazakhstan (Kazakh: Qazaqstan, Qazaqstan, Qazaqstan Respublikasya, Qazaqstan Respublikasi) is a country located in Central Asia and Eastern Europe. Administratively, this country is divided into 17 regions, and regions are divided into audan (districts). The capital is the city of Astana.',
-    image:'',
+    image:'https://admin.tabarrukziyorat.uz/media/country_images/Kazakh.jpg',
+    flag:'https://tabarrukziyorat.uz/media/country_flags/Kazakhstan.svg',
     infoCards:[
         {
             id:'1',

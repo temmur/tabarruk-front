@@ -2,10 +2,11 @@
 import {turkeyCards} from "@/data/DTurkeyCards.js";
 
 export const turkey ={
-    id:'Turkey',
+    id:2,
     title:'Turkey',
     subtitle:'Turkiya',
     image:'https://avatars.mds.yandex.net/i?id=65c0f1525554429a0f3d80b2cacb2786ad4634de-10385082-images-thumbs&n=13',
+    flag:'https://tabarrukziyorat.uz/media/country_flags/Turkey_lzgDBoT.svg',
     children: [
         {
             id:1,
