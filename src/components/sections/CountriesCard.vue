@@ -46,12 +46,8 @@
 
 
 <template>
-<<<<<<< HEAD
-  <section class="w-full py-12  flex flex-col items-center">
-
-=======
   <section class="w-full py-12 flex flex-col items-center">
->>>>>>> febcedae01b37b57ee8d1f4f535fc05fedf048be
+<div>
     <!-- Title -->
     <h2 :class="[
     'title',
@@ -79,7 +75,6 @@
           before:bottom-0 before:h-[2px] before:bg-gray-400 before:w-7 hover:before:w-75 overflow-hidden
  before:transition-all before:duration-300"
 
-<<<<<<< HEAD
         >
           <img
               :src="country.flag"
@@ -91,20 +86,19 @@
 
         </div>
       </router-link>
-=======
+
       >
        <img
-            :src="country.image"
-            :alt="country.name"
+            :src="country?.image"
+            :alt="country?.name"
             :class="[
                 'image',
                 'w-13 md:w-20 h-13 md:h-20 rounded-full  backdrop-blur-md border-gray-600 border-4 object-cover mb-2 flex mx-auto'
             ]"
         />
-        <span class="text-lg font-medium text-white">{{ country.name }}</span>
-        <span class="text-[14px] font-medium text-gray-500">{{country.desc}}</span>
+        <span class="text-lg font-medium text-white">{{ country?.name }}</span>
+        <span class="text-[14px] font-medium text-gray-500">{{country?.desc}}</span>
       </div>
->>>>>>> febcedae01b37b57ee8d1f4f535fc05fedf048be
     </div>
   </section>
 </template>
@@ -118,13 +112,12 @@ interface Country{
 const props = defineProps<{
   countries:[]
 }>()
-<<<<<<< HEAD
+
 </script>
-=======
-</script>
+
+
 
 <style>
 
 
 </style>
->>>>>>> febcedae01b37b57ee8d1f4f535fc05fedf048be

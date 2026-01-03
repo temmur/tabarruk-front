@@ -16,7 +16,8 @@
 </template>
 
 <script setup lang="ts">
-import { cards, countries } from '@/data/DCardsData.js';
+import { cards, } from '@/data/DCardsData.js';
+import {countries} from '@/data/DCountriesData'
 import CBanner from "@/components/CBanner.vue";
 import TravelStats from "@/cards/TravelStats.vue";
 import CountriesCard from '@/components/Sections/CountriesCard.vue'
