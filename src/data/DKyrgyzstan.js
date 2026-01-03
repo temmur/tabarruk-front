@@ -1,10 +1,11 @@
-import {kyrgyzstanCards} from 'DKyrgyzstanCards.js'
+import {kyrgyzstanCards} from '@/data/DKyrgyzstanCards.js'
 
 export const kyrgyzstan ={
     id:6,
     title:'Kyrgyzstan',
     subtitle:'Kyrgyzstan (Kyrgyz: Kyrgyz [qɯrʁɯz\'stɑn] Kyrgyzstan) or the Kyrgyz Republic (Kyrgyz: Kyrgyz Respublikasya) is a country located in northeastern Central Asia. The capital is the city of Bishkek. Kyrgyzstan is a member of the UN.',
     image:'https://avatars.mds.yandex.net/i?id=ce151c6fc97d9e0a1efb95d015ae3a66422651cc-7669654-images-thumbs&n=13',
+    flag:'https://tabarrukziyorat.uz/media/country_flags/Kyrgyzstan.svg',
     infoCards:[
         {
             id:'1',

@@ -14,5 +14,5 @@ export const countries = [
     azerbaijanCards,
     kazakhstan,
     kyrgyzstan,
-    hungary,
+    hungary
 ];
